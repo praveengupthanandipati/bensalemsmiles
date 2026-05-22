@@ -1353,13 +1353,53 @@ header {
     display: block;
 }
 
-/* Review text */
+/* Review text — clamped to 4 lines by default */
 .testi-text {
     font-size: 0.92rem;
     color: #475569;
     line-height: 1.85;
-    flex-grow: 1;
-    margin-bottom: 1.5rem;
+    /* 3 lines: 0.92rem × 1.85 × 3 ≈ 5.11rem */
+    max-height: 5.11rem;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-bottom: 0.4rem;
+}
+
+.testi-text.is-expanded {
+    max-height: 600px;
+}
+
+/* Read more / Read less toggle button */
+.testi-read-more {
+    background: none;
+    border: none;
+    padding: 0 0 1rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--bs-primary);
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    gap: 0.25rem;
+    letter-spacing: 0.01em;
+    transition: opacity 0.2s ease;
+    line-height: 1;
+}
+
+.testi-read-more.is-visible {
+    display: inline-flex;
+}
+
+.testi-read-more:hover {
+    opacity: 0.75;
+}
+
+.testi-read-more svg {
+    transition: transform 0.25s ease;
+}
+
+.testi-read-more.is-expanded svg {
+    transform: rotate(180deg);
 }
 
 /* Author row */
@@ -1540,5 +1580,436 @@ header {
 
 @media (max-width: 576px) {
     .ins-logo { width: 130px; height: 75px; }
+}
+
+/* ----------------------------------------------------
+   FOOTER
+   ---------------------------------------------------- */
+.site-footer {
+    background: linear-gradient(160deg, #030d2e 0%, var(--bs-secondary) 60%, #0c2b8c 100%);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Main footer body */
+.footer-main {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Logo */
+.footer-logo img {
+    filter: brightness(1.1);
+}
+
+/* Contact items */
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.footer-contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(8, 138, 199, 0.18);
+    color: var(--bs-primary);
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}
+
+/* Social buttons */
+.footer-socials {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.footer-social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-social-btn:hover {
+    background: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Column headings */
+.footer-heading {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--bs-primary);
+    display: inline-block;
+}
+
+/* Links list */
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.footer-links-list li a {
+    font-size: 0.87rem;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.footer-links-list li a::before {
+    content: '›';
+    font-size: 1.1rem;
+    color: var(--bs-primary);
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.footer-links-list li a:hover {
+    color: #ffffff;
+    gap: 0.6rem;
+}
+
+.footer-links-list li a:hover::before {
+    transform: translateX(3px);
+}
+
+/* Refer-a-Friend card */
+.footer-refer-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+}
+
+.footer-refer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: rgba(8, 138, 199, 0.18);
+    color: var(--bs-primary);
+    margin-bottom: 1rem;
+}
+
+.footer-refer-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+}
+
+.text-primary-light {
+    color: #5bc8f0;
+}
+
+.footer-refer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bs-primary);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.6rem 1.3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.footer-refer-btn:hover {
+    background: var(--bs-primary-hover);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(8, 138, 199, 0.35);
+}
+
+.footer-refer-btn svg {
+    transition: transform 0.25s ease;
+}
+
+.footer-refer-btn:hover svg {
+    transform: translateX(3px);
+}
+
+/* Bottom copyright bar */
+.footer-bottom {
+    padding: 1.25rem 0;
+    background: rgba(0, 0, 0, 0.25);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.footer-intro {
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.60);
+    margin-bottom: 1.5rem;
+}
+
+.footer-intro-link {
+    color: var(--bs-primary);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.footer-intro-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* ====================================================
+   FLOATING ACTION BUTTONS
+   WhatsApp + Back to Top
+   ==================================================== */
+
+/* --- WhatsApp FAB --- */
+.fab-whatsapp {
+    position: fixed;
+    bottom: 88px;
+    right: 24px;
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #25d366;
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 0.65rem 1.1rem 0.65rem 0.85rem;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s ease,
+                padding 0.3s ease;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.fab-whatsapp:hover {
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+}
+
+.fab-whatsapp svg { flex-shrink: 0; }
+
+.fab-whatsapp__label {
+    max-width: 80px;
+    overflow: hidden;
+    transition: max-width 0.35s ease, opacity 0.35s ease;
+}
+
+/* Collapse label on mobile */
+@media (max-width: 575.98px) {
+    .fab-whatsapp {
+        padding: 0.75rem;
+        border-radius: 50%;
+    }
+    .fab-whatsapp__label {
+        max-width: 0;
+        opacity: 0;
+        padding: 0;
+    }
+}
+
+/* --- Back to Top FAB --- */
+.fab-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1050;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--bs-primary);
+    color: #ffffff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(8, 138, 199, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition: opacity 0.35s ease,
+                visibility 0.35s ease,
+                transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.25s ease;
+}
+
+.fab-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.fab-top:hover {
+    background: var(--bs-primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(8, 138, 199, 0.5);
+}
+
+/* ====================================================
+   RESPONSIVE OVERRIDES
+   xs < 576 | sm 576 | md 768 | lg 992 | xl 1200
+   ==================================================== */
+
+/* --- Container tighter on phones --- */
+@media (max-width: 575.98px) {
+    .container-90 {
+        width: 95% !important;
+        max-width: 95% !important;
+    }
+}
+
+/* ---- HEADER TOP BAR ---- */
+@media (max-width: 575.98px) {
+    .header-top {
+        padding-top: 0.35rem !important;
+        padding-bottom: 0.35rem !important;
+    }
+    /* Hide address on phones; keep phone number */
+    .header-top .me-3 { display: none !important; }
+    .header-top .col-12 { font-size: 0.78rem; }
+}
+
+/* ---- HERO SLIDER ---- */
+@media (max-width: 575.98px) {
+    .slide-content {
+        padding: 0 5%;
+        max-width: 100%;
+    }
+    .slide-desc { max-width: 100%; }
+}
+
+/* ---- 5-COL FEATURES (dark band) ---- */
+@media (max-width: 575.98px) {
+    .feature-card { padding: 1.5rem 1.2rem; }
+    .feature-icon-wrap { width: 52px; height: 52px; }
+}
+
+/* Center lone card in last row on sm–lg */
+@media (min-width: 576px) and (max-width: 1199.98px) {
+    .features .row { justify-content: center; }
+}
+
+/* ---- ABOUT SECTION ---- */
+/* Tablet: reduce image height, move badges inside image bounds */
+@media (max-width: 991.98px) {
+    .about-img { height: 340px; }
+    .about-img-wrap--alt .about-img { height: 360px; }
+
+    .about-badge--top    { top: 14px;    right: 14px; }
+    .about-badge--bottom { bottom: 14px; left: 14px;  }
+    .about-floating-card { bottom: 14px; right: 14px; }
+}
+
+/* Mobile: shorter image, hide floating badges to avoid clutter */
+@media (max-width: 575.98px) {
+    .about-img,
+    .about-img-wrap--alt .about-img { height: 230px; }
+
+    .about-badge, .about-floating-card { display: none; }
+
+    .about-btn { width: 100%; justify-content: center; }
+    .about-desc { font-size: 0.95rem; }
+}
+
+/* ---- GALLERY ---- */
+/* Already responsive (2-col ≤768, 1-col ≤480) */
+
+/* ---- ADVICE SECTION ---- */
+/* Stack call CTA vertically on very small phones */
+@media (max-width: 480px) {
+    .advice-cta {
+        flex-direction: column;
+        gap: 0.6rem;
+        padding: 1.25rem 1.5rem;
+        border-radius: 20px;
+        text-align: center;
+    }
+    .advice-cta__text { align-items: center; }
+    .advice-cta__icon { width: 44px; height: 44px; }
+}
+
+/* ---- 3-COL FEATURES (light) ---- */
+@media (max-width: 575.98px) {
+    .f3-card { padding: 1.75rem 1.5rem; }
+    .f3-number { font-size: 2.8rem; }
+}
+
+/* ---- TESTIMONIALS ---- */
+@media (max-width: 575.98px) {
+    .testi-card { padding: 1.5rem 1.25rem 1.25rem; }
+}
+
+/* ---- FOOTER ---- */
+/* Reduce vertical gap between stacked footer columns on mobile */
+@media (max-width: 767.98px) {
+    .footer-main .row { row-gap: 1.75rem !important; }
+}
+
+@media (max-width: 575.98px) {
+    .site-footer .py-5 {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+    .footer-heading { margin-bottom: 0.75rem; }
+    .footer-socials { flex-wrap: wrap; }
+    .footer-logo img { height: 60px; }
+}
+
+/* ---- SECTION HEADINGS & TYPOGRAPHY ---- */
+/* Already using clamp() — scaling handled automatically */
+
+/* ---- MODALS ---- */
+@media (max-width: 575.98px) {
+    .modal-dialog { margin: 0.5rem; }
+    .modal-body { padding: 1.25rem; }
+    .modal-header { padding: 1rem 1.25rem; }
+    .modal-footer { padding: 1rem 1.25rem 1.25rem; }
 }
 

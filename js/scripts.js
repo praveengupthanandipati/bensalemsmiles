@@ -211,4 +211,59 @@ var testiSwiper = new Swiper('.testimonial-swiper', {
         768:  { slidesPerView: 2 },
         1200: { slidesPerView: 3 },
     },
+    on: {
+        init: function () { initTestiReadMore(); },
+        resize: function () { initTestiReadMore(); },
+    },
 });
+
+/* -----------------------------------------------
+   TESTIMONIAL READ MORE / READ LESS
+----------------------------------------------- */
+function initTestiReadMore() {
+    document.querySelectorAll('.testi-text').forEach(function (el) {
+        /* skip if button already injected */
+        if (el.nextElementSibling && el.nextElementSibling.classList.contains('testi-read-more')) return;
+
+        var btn = document.createElement('button');
+        btn.className = 'testi-read-more';
+        btn.innerHTML =
+            'Read more' +
+            '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+
+        el.parentNode.insertBefore(btn, el.nextSibling);
+
+        /* show button only when text actually overflows */
+        if (el.scrollHeight > el.clientHeight + 2) {
+            btn.classList.add('is-visible');
+        }
+
+        btn.addEventListener('click', function () {
+            var expanded = el.classList.toggle('is-expanded');
+            btn.classList.toggle('is-expanded', expanded);
+            btn.innerHTML = expanded
+                ? 'Read less <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>'
+                : 'Read more <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+        });
+    });
+}
+
+/* -----------------------------------------------
+   BACK TO TOP
+----------------------------------------------- */
+(function () {
+    var btn = document.getElementById('backToTop');
+    if (!btn) return;
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 320) {
+            btn.classList.add('is-visible');
+        } else {
+            btn.classList.remove('is-visible');
+        }
+    }, { passive: true });
+
+    btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}());
