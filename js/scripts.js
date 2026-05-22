@@ -186,3 +186,29 @@ var swiper = new Swiper('.homeslider', {
         }
     }
 });
+
+/* -----------------------------------------------
+   TESTIMONIAL SWIPER
+----------------------------------------------- */
+var testiSwiper = new Swiper('.testimonial-swiper', {
+    loop: true,
+    speed: 700,
+    slidesPerView: 1,
+    spaceBetween: 24,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.testi-pagination',
+        clickable: true,
+    },
+    navigation: {
+        prevEl: '#testiPrev',
+        nextEl: '#testiNext',
+    },
+    breakpoints: {
+        768:  { slidesPerView: 2 },
+        1200: { slidesPerView: 3 },
+    },
+});
