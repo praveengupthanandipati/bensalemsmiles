@@ -7,6 +7,46 @@
  *   - Repeat animations up/down using 'data-reveal-repeat="true"'
  */
 
+/* -----------------------------------------------
+   PAGE PRELOADER
+----------------------------------------------- */
+window.addEventListener("load", function () {
+    var preloader = document.getElementById("pagePreloader");
+    if (preloader) {
+        preloader.classList.add("is-hidden");
+        preloader.addEventListener("transitionend", function () {
+            preloader.remove();
+        }, { once: true });
+    }
+});
+
+/* -----------------------------------------------
+   HEADER TOP BAR — HIDE ON SCROLL
+----------------------------------------------- */
+(function () {
+    var header    = document.querySelector('header');
+    var headerTop = document.querySelector('.header-top');
+    if (!header || !headerTop) return;
+
+    var topHeight = 0;
+
+    function measureTop() {
+        topHeight = headerTop.offsetHeight;
+    }
+
+    function onScroll() {
+        if (window.scrollY > 60) {
+            header.style.transform = 'translateY(-' + topHeight + 'px)';
+        } else {
+            header.style.transform = '';
+        }
+    }
+
+    measureTop();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', measureTop, { passive: true });
+}());
+
 document.addEventListener("DOMContentLoaded", () => {
     // Select all elements designed to reveal on scroll
     const revealElements = document.querySelectorAll(".reveal");
