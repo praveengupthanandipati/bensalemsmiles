@@ -275,12 +275,23 @@ header {
     }
 
     .header-nav .dropdown-menu {
-        display: block;
+        display: block !important;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(15px);
+        transform: translateY(8px);
         pointer-events: none;
-        transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
+        margin-top: 0 !important;
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    }
+
+    /* Transparent bridge fills the gap between nav link and menu so hover isn't lost */
+    .header-nav .dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        right: 0;
+        height: 10px;
     }
 
     /* Mega Menu Specific Placement */
@@ -309,6 +320,14 @@ header {
 .dropdown-menu .dropdown-item:hover {
     color: var(--bs-primary);
     background-color: rgba(8, 138, 199, 0.05);
+}
+
+.dropdown-menu .dropdown-item.active {
+    color: var(--bs-primary);
+    background-color: rgba(8, 138, 199, 0.08);
+    font-weight: 700;
+    border-left: 3px solid var(--bs-primary);
+    padding-left: calc(1rem - 3px);
 }
 
 /* Mega Menu Item Lists */
@@ -2092,3 +2111,2135 @@ header {
     .modal-footer { padding: 1rem 1.25rem 1.25rem; }
 }
 
+/* ====================================================
+   SUB-PAGE HERO (Inner page banner)
+   ==================================================== */
+.page-hero {
+    position: relative;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.page-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(6, 28, 99, 0.88) 0%, rgba(8, 138, 199, 0.65) 100%);
+}
+
+/* Brand-colour gradient variant — no photo needed */
+.page-hero--branded {
+    background: linear-gradient(135deg, #061c63 0%, #0c2b8c 50%, #088ac7 100%);
+}
+
+.page-hero--branded .page-hero__overlay {
+    background: transparent;
+}
+
+.page-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.page-hero__title {
+    color: #fff;
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.02em;
+}
+
+.page-hero__breadcrumb {
+    margin-bottom: 0;
+    --bs-breadcrumb-divider-color: rgba(255, 255, 255, 0.45);
+    --bs-breadcrumb-item-active-color: #fff;
+}
+
+.page-hero__breadcrumb .breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+}
+
+.page-hero__breadcrumb .breadcrumb-item a:hover {
+    color: #fff;
+}
+
+.page-hero__breadcrumb .breadcrumb-item.active {
+    color: #fff;
+    font-size: 0.875rem;
+}
+
+.page-hero__breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* ====================================================
+   WHY CHOOSE US CARDS (About Page)
+   ==================================================== */
+.why-card {
+    padding: 2rem 1.75rem;
+    border-radius: 16px;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    height: 100%;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(6, 28, 99, 0.08);
+    border-color: rgba(8, 138, 199, 0.3);
+}
+
+.why-card__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--bs-primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: var(--bs-primary);
+    flex-shrink: 0;
+}
+
+.why-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.why-card__desc {
+    font-size: 0.925rem;
+    color: #64748b;
+    line-height: 1.75;
+    margin-bottom: 0;
+}
+
+/* ====================================================
+   SPECIALS SECTION (About Page)
+   ==================================================== */
+.specials-stat {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.4rem;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 12px rgba(6, 28, 99, 0.04);
+}
+
+.specials-stat__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--bs-primary-light);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.specials-stat__value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--bs-secondary);
+    line-height: 1;
+}
+
+.specials-stat__label {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* ====================================================
+   ABOUT PAGE — RESPONSIVE
+   ==================================================== */
+
+/* --- Stats grid (Section 02) ---
+   Desktop (lg+) : single flex column inside col-lg-5
+   Tablet (sm–md): 2 × 2 grid
+   Mobile (xs)   : single column                        */
+.specials-stats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .specials-stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+/* --- Action buttons (Section 02) ---
+   Full-width stacked on phones                          */
+@media (max-width: 575.98px) {
+    .about-action-btns {
+        flex-direction: column;
+    }
+    .about-action-btns .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* --- Page hero ---                                     */
+@media (max-width: 767.98px) {
+    .page-hero { min-height: 240px; }
+}
+
+@media (max-width: 575.98px) {
+    .page-hero { min-height: 200px; }
+    .page-hero__title { font-size: 1.65rem; }
+    .page-hero__content { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+}
+
+/* --- Why cards ---                                     */
+@media (max-width: 575.98px) {
+    .why-card { padding: 1.5rem 1.25rem; }
+    .why-card__icon { width: 48px; height: 48px; }
+}
+
+/* --- Stat cards ---                                    */
+@media (max-width: 575.98px) {
+    .specials-stat { padding: 0.85rem 1rem; }
+    .specials-stat__icon { width: 38px; height: 38px; }
+    .specials-stat__value { font-size: 1.2rem; }
+    .specials-stat__label { font-size: 0.76rem; }
+}
+
+/* --- Section 03 CTA button ---                        */
+@media (max-width: 575.98px) {
+    .subpage .btn-lg {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.95rem;
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+.subpage{
+    min-height:600px;
+}
+
+/* ====================================================
+   TECH PANEL — Modern Clinic Page
+   ==================================================== */
+.tech-panel {
+    background: linear-gradient(135deg, #061c63 0%, #0c2b8c 55%, #088ac7 100%);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Decorative circles */
+.tech-panel::before,
+.tech-panel::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.tech-panel::before {
+    width: 220px;
+    height: 220px;
+    background: rgba(255, 255, 255, 0.05);
+    top: -60px;
+    right: -60px;
+}
+
+.tech-panel::after {
+    width: 160px;
+    height: 160px;
+    background: rgba(255, 255, 255, 0.04);
+    bottom: -50px;
+    left: -40px;
+}
+
+.tech-panel__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.tech-panel__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 0.4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.tech-panel__heading {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+    position: relative;
+    z-index: 1;
+}
+
+.tech-panel__sub {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.tech-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.tech-stat {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    padding: 0.9rem 1rem;
+}
+
+.tech-stat__value {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.tech-stat__label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.68);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+/* Feature pill list */
+.tech-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+}
+
+.tech-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.925rem;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.tech-features li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.tech-features__icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--bs-primary-light);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* Section divider line */
+.section-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border) 20%, var(--color-border) 80%, transparent);
+    margin: 0;
+    border: none;
+}
+
+/* ---- Tech panel responsive ---- */
+@media (max-width: 991.98px) {
+    .tech-panel { padding: 2rem 1.75rem; }
+    .tech-panel__heading { font-size: 1.15rem; }
+}
+
+@media (max-width: 575.98px) {
+    .tech-panel { padding: 1.75rem 1.4rem; border-radius: 14px; }
+    .tech-stats { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .tech-stat__value { font-size: 1.15rem; }
+    .tech-panel__icon { width: 52px; height: 52px; border-radius: 12px; }
+}
+
+/* ====================================================
+   DOCTORS PAGE
+   ==================================================== */
+
+/* Intro strip */
+.crew-intro {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: #64748b;
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Photo wrapper */
+.doctor-photo-wrap {
+    position: relative;
+}
+
+.doctor-img-clip {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 24px 56px rgba(6, 28, 99, 0.13);
+}
+
+.doctor-img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.doctor-photo-wrap:hover .doctor-img {
+    transform: scale(1.03);
+}
+
+/* Floating name tag */
+.doctor-tag {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 0.85rem 1.2rem;
+    box-shadow: 0 10px 30px rgba(6, 28, 99, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    min-width: 230px;
+    z-index: 2;
+}
+
+.doctor-tag__avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #061c63, #088ac7);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.825rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+}
+
+.doctor-tag__name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    line-height: 1.2;
+}
+
+.doctor-tag__role {
+    font-size: 0.72rem;
+    color: var(--bs-primary);
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* Bio text */
+.doctor-title {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: var(--bs-secondary);
+    line-height: 1.25;
+    margin-bottom: 0.35rem;
+}
+
+.doctor-role {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--bs-primary);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.doctor-role::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: var(--bs-primary);
+    border-radius: 2px;
+}
+
+/* Credential pills */
+.doctor-credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.doctor-credential {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.32rem 0.85rem;
+    background: var(--bs-primary-light);
+    color: var(--bs-primary);
+    border-radius: 50px;
+    font-size: 0.775rem;
+    font-weight: 600;
+    border: 1px solid rgba(8, 138, 199, 0.18);
+}
+
+.doctor-credential svg {
+    flex-shrink: 0;
+}
+
+/* Section separator */
+.doctor-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border) 20%, var(--color-border) 80%, transparent);
+    margin: 0;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .doctor-img { height: 400px; }
+    .doctor-tag { bottom: 14px; left: 14px; min-width: 200px; }
+}
+
+@media (max-width: 575.98px) {
+    .doctor-img { height: 300px; }
+    .doctor-tag { display: none; }
+    .doctor-img-clip { border-radius: 14px; }
+}
+
+/* ====================================================
+   FAIR PRICES PAGE
+   ==================================================== */
+
+/* Intro value pill */
+.price-value-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+}
+
+.price-value-item__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--bs-primary-light);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.price-value-item__title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 2px;
+}
+
+.price-value-item__sub {
+    font-size: 0.78rem;
+    color: #64748b;
+}
+
+/* Base price card */
+.price-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    height: 100%;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(6, 28, 99, 0.08);
+    border-color: rgba(8, 138, 199, 0.3);
+}
+
+/* Featured (gradient) variant */
+.price-card--featured {
+    background: linear-gradient(135deg, #061c63 0%, #0c2b8c 55%, #088ac7 100%);
+    border-color: transparent;
+}
+
+.price-card--featured:hover {
+    box-shadow: 0 20px 40px rgba(6, 28, 99, 0.25);
+    border-color: transparent;
+}
+
+/* Free / highlight variant */
+.price-card--free {
+    border-color: rgba(22, 163, 74, 0.3);
+    background: rgba(22, 163, 74, 0.03);
+}
+
+/* Amount display */
+.price-card__amount {
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    font-weight: 800;
+    color: var(--bs-secondary);
+    line-height: 1;
+    margin-bottom: 0.15rem;
+}
+
+.price-card--featured .price-card__amount { color: #fff; }
+.price-card--free .price-card__amount { color: #16a34a; }
+
+.price-card__period {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.price-card--featured .price-card__period { color: rgba(255,255,255,0.6); }
+
+/* Title & desc */
+.price-card__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 0.35rem;
+    margin-top: 0.75rem;
+}
+
+.price-card--featured .price-card__title { color: #fff; }
+.price-card--free .price-card__title { color: #15803d; }
+
+.price-card__desc {
+    font-size: 0.845rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.price-card--featured .price-card__desc { color: rgba(255,255,255,0.75); }
+
+/* Feature list inside card */
+.price-card__list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 1.5rem;
+}
+
+.price-card__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
+    font-size: 0.845rem;
+    color: #475569;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.price-card__list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+.price-card--featured .price-card__list li {
+    color: rgba(255,255,255,0.85);
+    border-bottom-color: rgba(255,255,255,0.12);
+}
+
+.price-card__list-icon {
+    color: var(--bs-primary);
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.price-card--featured .price-card__list-icon { color: rgba(255,255,255,0.8); }
+
+/* Top badge ribbon */
+.price-card__badge {
+    display: inline-block;
+    padding: 0.25rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+}
+
+.price-card__badge--free   { background: rgba(22,163,74,0.1);  color: #16a34a; border: 1px solid rgba(22,163,74,0.2); }
+.price-card__badge--pop    { background: var(--bs-primary);    color: #fff; }
+.price-card__badge--light  { background: rgba(8,138,199,0.1); color: var(--bs-primary); border: 1px solid rgba(8,138,199,0.2); }
+.price-card__badge--off    { background: rgba(239,68,68,0.1);  color: #dc2626; border: 1px solid rgba(239,68,68,0.2); }
+.price-card__badge--cbct   { background: var(--bs-secondary);  color: #fff; }
+
+/* Section sub-heading */
+.offers-heading {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 800;
+    color: var(--bs-secondary);
+    margin-bottom: 0.35rem;
+}
+
+/* Wide CBCT card */
+.cbct-card {
+    background: linear-gradient(135deg, #061c63 0%, #0c2b8c 55%, #088ac7 100%);
+    border-radius: 16px;
+    padding: 2rem 2.25rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.cbct-card__amount {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.cbct-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.cbct-card__desc {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 0;
+}
+
+/* Price value item aliases */
+.price-value-item__label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 2px;
+}
+
+.price-value-item__desc {
+    font-size: 0.78rem;
+    color: #64748b;
+}
+
+/* Small icon circle inside card header */
+.price-card__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--bs-primary-light);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Light blue badge variant (for use on white cards) */
+.price-card__badge--light {
+    background: rgba(8, 138, 199, 0.1);
+    color: var(--bs-primary);
+    border: 1px solid rgba(8, 138, 199, 0.2);
+}
+
+/* CBCT card inner layout */
+.cbct-card__icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.cbct-card__body {
+    flex: 1;
+    min-width: 220px;
+}
+
+.cbct-card__eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 0.3rem;
+}
+
+.cbct-card__note {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.3rem;
+}
+
+.cbct-card__pricing {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 575.98px) {
+    .price-card { padding: 1.4rem 1.2rem; }
+    .price-card__amount { font-size: 1.9rem; }
+    .cbct-card { flex-direction: column; gap: 1rem; text-align: center; }
+    .cbct-card__amount { font-size: 2.2rem; }
+    .cbct-card__body { min-width: unset; }
+    .cbct-card__icon { margin: 0 auto; }
+}
+
+/* ====================================================
+   NEW TECHNOLOGY PAGE · Section Images
+   ==================================================== */
+.newtec-img-wrap {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 24px 56px rgba(6, 28, 99, 0.14);
+}
+
+.newtec-img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.newtec-img-wrap:hover .newtec-img {
+    transform: scale(1.04);
+}
+
+.newtec-img-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 1.75rem;
+    background: linear-gradient(to top, rgba(6, 28, 99, 0.82) 0%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    gap: 0.75rem;
+}
+
+.newtec-img-caption__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.newtec-img-caption__label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 0.2rem;
+}
+
+.newtec-img-caption__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+}
+
+@media (max-width: 991.98px) {
+    .newtec-img { height: 360px; }
+}
+
+@media (max-width: 575.98px) {
+    .newtec-img { height: 260px; border-radius: 14px; }
+}
+
+/* ====================================================
+   PREVENTIVE DENTISTRY PAGE
+   ==================================================== */
+.prevdent-service-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--bs-primary-light);
+    color: var(--bs-primary);
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.prevdent-service-badge--kids {
+    background: rgba(22, 163, 74, 0.1);
+    color: #16a34a;
+}
+
+.prevdent-service-title {
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    font-weight: 800;
+    color: var(--bs-secondary);
+    margin-bottom: 1rem;
+}
+
+.prevdent-kids-tips {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.prevdent-kids-tips__header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.25rem;
+    background: rgba(22, 163, 74, 0.07);
+    color: #15803d;
+    font-size: 0.875rem;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(22, 163, 74, 0.15);
+}
+
+.prevdent-kids-tips__list {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.prevdent-kids-tips__list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 1.25rem;
+    font-size: 0.875rem;
+    color: #475569;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.prevdent-kids-tips__list li:last-child { border-bottom: none; }
+
+.prevdent-kids-tips__list li::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #16a34a;
+    flex-shrink: 0;
+}
+
+/* ====================================================
+   PEDIATRIC DENTISTRY PAGE
+   ==================================================== */
+
+/* Service Cards */
+.pedi-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.pedi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(6, 28, 99, 0.08);
+    border-color: rgba(8, 138, 199, 0.3);
+}
+
+.pedi-card--highlight {
+    background: linear-gradient(135deg, #061c63 0%, #0c2b8c 55%, #088ac7 100%);
+    border-color: transparent;
+}
+
+.pedi-card--highlight:hover {
+    box-shadow: 0 20px 40px rgba(6, 28, 99, 0.25);
+    border-color: transparent;
+}
+
+.pedi-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--bs-primary-light);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.pedi-card__icon--light {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.pedi-card__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.pedi-card__desc {
+    font-size: 0.86rem;
+    color: #64748b;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Stats grid inside Why section */
+.pedi-stat {
+    background: var(--color-light-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    text-align: center;
+}
+
+.pedi-stat__value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--bs-primary);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+.pedi-stat__label {
+    font-size: 0.775rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Age guide cards */
+.pedi-age-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pedi-age-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(6, 28, 99, 0.08);
+}
+
+.pedi-age-card__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #061c63 0%, #088ac7 100%);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin: 0 auto 1rem;
+}
+
+.pedi-age-card__title {
+    font-size: 0.975rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.pedi-age-card__desc {
+    font-size: 0.84rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 575.98px) {
+    .pedi-card { padding: 1.4rem 1.2rem; }
+    .pedi-age-card { padding: 1.25rem 1rem; }
+}
+
+/* ====================================================
+   ROOT CANAL TREATMENT PAGE
+   ==================================================== */
+
+/* Benefit cards */
+.rct-benefit-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.rct-benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(6, 28, 99, 0.08);
+    border-color: rgba(8, 138, 199, 0.3);
+}
+
+.rct-benefit-card__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--bs-primary-light);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.rct-benefit-card__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.rct-benefit-card__desc {
+    font-size: 0.86rem;
+    color: #64748b;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* FAQ cards */
+.rct-faq-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.rct-faq-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--bs-secondary) 0%, var(--bs-primary) 100%);
+}
+
+.rct-faq-card__number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgba(8, 138, 199, 0.12);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -2px;
+}
+
+.rct-faq-card__title {
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.rct-faq-card__text {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Symptoms list */
+.rct-symptoms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.rct-symptom {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+    transition: background 0.2s ease;
+}
+
+.rct-symptom:last-child { border-bottom: none; }
+
+.rct-symptom:hover { background: rgba(8, 138, 199, 0.03); }
+
+.rct-symptom__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.08);
+    color: #dc2626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.rct-symptom__title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 0.15rem;
+}
+
+.rct-symptom__desc {
+    font-size: 0.8rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Cost pills */
+.rct-cost-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-light-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--bs-secondary);
+}
+
+.rct-cost-pill svg {
+    color: var(--bs-primary);
+    flex-shrink: 0;
+}
+
+@media (max-width: 575.98px) {
+    .rct-benefit-card { padding: 1.4rem 1.2rem; }
+    .rct-faq-card { padding: 1.5rem 1.25rem; }
+    .rct-faq-card__number { font-size: 2rem; }
+    .rct-symptom { padding: 0.75rem 1rem; }
+}
+
+/* =============================================
+   COMPLETE & PARTIAL DENTURES PAGE
+   ============================================= */
+
+/* Type overview cards */
+.dent-type-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 2rem 1.5rem 1.75rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dent-type-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--bs-primary);
+    border-radius: 16px 16px 0 0;
+}
+
+.dent-type-card--partial::before {
+    background: var(--bs-secondary);
+}
+
+.dent-type-card--precision::before {
+    background: linear-gradient(90deg, var(--bs-secondary), var(--bs-primary));
+}
+
+.dent-type-card:hover {
+    box-shadow: 0 12px 36px rgba(6, 28, 99, 0.1);
+    transform: translateY(-4px);
+}
+
+.dent-type-card__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(8, 138, 199, 0.1);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dent-type-card--partial .dent-type-card__icon {
+    background: rgba(6, 28, 99, 0.08);
+    color: var(--bs-secondary);
+}
+
+.dent-type-card--precision .dent-type-card__icon {
+    background: linear-gradient(135deg, rgba(6,28,99,0.08), rgba(8,138,199,0.12));
+    color: var(--bs-primary);
+}
+
+.dent-type-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin: 0;
+}
+
+.dent-type-card__desc {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.65;
+    margin: 0;
+    flex: 1;
+}
+
+.dent-type-card__tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+    background: rgba(8, 138, 199, 0.1);
+    color: var(--bs-primary);
+    align-self: flex-start;
+    margin-top: 0.25rem;
+}
+
+.dent-type-card--partial .dent-type-card__tag {
+    background: rgba(6, 28, 99, 0.08);
+    color: var(--bs-secondary);
+}
+
+.dent-type-card--precision .dent-type-card__tag {
+    background: linear-gradient(90deg, var(--bs-secondary), var(--bs-primary));
+    color: #fff;
+}
+
+/* Comparison cards (Traditional vs Immediate) */
+.dent-compare-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(6, 28, 99, 0.05);
+    transition: box-shadow 0.25s ease;
+}
+
+.dent-compare-card:hover {
+    box-shadow: 0 10px 32px rgba(6, 28, 99, 0.12);
+}
+
+.dent-compare-card__header {
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.dent-compare-card__header--traditional {
+    background: linear-gradient(135deg, #061c63 0%, #0c2b8c 100%);
+    color: #fff;
+}
+
+.dent-compare-card__header--immediate {
+    background: linear-gradient(135deg, #087ab8 0%, #088ac7 100%);
+    color: #fff;
+}
+
+.dent-compare-card__header-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dent-compare-card__badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.dent-compare-card__badge--immediate {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.dent-compare-card__body {
+    padding: 1.5rem 1.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.dent-compare-card__title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--bs-primary);
+    margin: 0 0 0.25rem;
+}
+
+.dent-compare-card__text {
+    font-size: 0.875rem;
+    color: #334155;
+    line-height: 1.65;
+    margin: 0;
+}
+
+.dent-compare-card__note {
+    margin-top: auto;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    color: #475569;
+    background: var(--color-light-bg);
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.dent-compare-card__note--warning {
+    background: rgba(8, 138, 199, 0.05);
+    border-color: rgba(8, 138, 199, 0.2);
+    color: #0369a1;
+}
+
+/* Partial denture options (A / B / C) */
+.dent-partial-option {
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.25rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    transition: box-shadow 0.2s ease;
+}
+
+.dent-partial-option:hover {
+    box-shadow: 0 6px 20px rgba(6, 28, 99, 0.08);
+}
+
+.dent-partial-option__num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bs-secondary), var(--bs-primary));
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dent-partial-option__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin: 0 0 0.2rem;
+}
+
+.dent-partial-option__desc {
+    font-size: 0.845rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 575.98px) {
+    .dent-type-card { padding: 1.5rem 1.2rem 1.4rem; }
+    .dent-compare-card__header { padding: 1.2rem 1.25rem; }
+    .dent-compare-card__body { padding: 1.25rem; }
+    .dent-partial-option { padding: 0.9rem 1rem; }
+}
+
+/* =============================================
+   COSMETIC DENTISTRY PAGE
+   ============================================= */
+
+/* Intro check pills */
+.cosm-intro-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1rem;
+    background: rgba(8, 138, 199, 0.06);
+    border: 1px solid rgba(8, 138, 199, 0.18);
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--bs-secondary);
+}
+
+.cosm-intro-pill svg {
+    color: var(--bs-primary);
+    flex-shrink: 0;
+}
+
+/* Service cards */
+.cosm-service-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 2rem 1.6rem 1.75rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cosm-service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--bs-primary);
+    border-radius: 0 0 16px 16px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.cosm-service-card:hover {
+    box-shadow: 0 12px 36px rgba(6, 28, 99, 0.1);
+    transform: translateY(-4px);
+}
+
+.cosm-service-card:hover::after { opacity: 1; }
+
+.cosm-service-card--accent {
+    background: linear-gradient(160deg, rgba(6, 28, 99, 0.03) 0%, rgba(8, 138, 199, 0.04) 100%);
+    border-color: rgba(8, 138, 199, 0.2);
+}
+
+.cosm-service-card__icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: rgba(8, 138, 199, 0.1);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cosm-service-card__icon--accent {
+    background: rgba(6, 28, 99, 0.08);
+    color: var(--bs-secondary);
+}
+
+.cosm-service-card__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin: 0.25rem 0 0;
+}
+
+.cosm-service-card__desc {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.65;
+    margin: 0;
+    flex: 1;
+}
+
+.cosm-service-card__footer { margin-top: 0.5rem; }
+
+.cosm-service-card__tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.7rem;
+    border-radius: 50px;
+    background: rgba(8, 138, 199, 0.1);
+    color: var(--bs-primary);
+}
+
+.cosm-service-card__tag--accent {
+    background: rgba(6, 28, 99, 0.08);
+    color: var(--bs-secondary);
+}
+
+/* 3-step process section */
+.cosm-process-section {
+    background: var(--color-light-bg);
+}
+
+.cosm-step {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    padding: 2.25rem 1.75rem 2rem;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.cosm-step:hover {
+    box-shadow: 0 10px 32px rgba(6, 28, 99, 0.1);
+    transform: translateY(-4px);
+}
+
+.cosm-step--featured {
+    background: linear-gradient(160deg, var(--bs-secondary) 0%, #0c2b8c 60%, #088ac7 100%);
+    border-color: transparent;
+    color: #fff;
+}
+
+/* Connector lines between steps */
+.cosm-step__connector {
+    position: absolute;
+    top: 50px;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-border), rgba(8, 138, 199, 0.3));
+    z-index: 0;
+}
+
+.cosm-step__connector--right { right: -25%; }
+.cosm-step__connector--left  { left: -25%; }
+
+.cosm-step--featured .cosm-step__connector {
+    background: linear-gradient(90deg, rgba(8,138,199,0.4), rgba(8,138,199,0.1));
+}
+
+.cosm-step__num {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bs-primary);
+    background: rgba(8, 138, 199, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    margin-bottom: 0.25rem;
+}
+
+.cosm-step--featured .cosm-step__num {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.cosm-step__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+    background: rgba(8, 138, 199, 0.08);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cosm-step__icon--featured {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.cosm-step__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin: 0;
+}
+
+.cosm-step--featured .cosm-step__title { color: #fff; }
+
+.cosm-step__desc {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.65;
+    margin: 0;
+}
+
+.cosm-step--featured .cosm-step__desc { color: rgba(255, 255, 255, 0.82); }
+
+@media (max-width: 767.98px) {
+    .cosm-step { padding: 1.75rem 1.4rem 1.6rem; }
+    .cosm-step__connector { display: none !important; }
+}
+
+@media (max-width: 575.98px) {
+    .cosm-service-card { padding: 1.6rem 1.25rem 1.5rem; }
+    .cosm-intro-pill { font-size: 0.825rem; }
+}
+
+/* =============================================
+   DENTAL FILLINGS PAGE
+   ============================================= */
+
+.fill-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 1.6rem 1.5rem;
+    height: 100%;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.fill-card:hover {
+    box-shadow: 0 10px 30px rgba(6, 28, 99, 0.09);
+    transform: translateY(-3px);
+}
+
+.fill-card__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.fill-card__icon--gold     { background: rgba(202, 155, 36, 0.12); color: #b8870d; }
+.fill-card__icon--silver   { background: rgba(100, 116, 139, 0.12); color: #64748b; }
+.fill-card__icon--composite{ background: rgba(8, 138, 199, 0.10); color: var(--bs-primary); }
+.fill-card__icon--porcelain{ background: rgba(6, 28, 99, 0.08); color: var(--bs-secondary); }
+
+.fill-card__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin: 0 0 0.35rem;
+}
+
+.fill-card__desc {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.65;
+    margin: 0;
+}
+
+@media (max-width: 575.98px) {
+    .fill-card { padding: 1.25rem 1.1rem; }
+}
+
+/* =============================================
+   INVISALIGN PAGE
+   ============================================= */
+
+.invis-stat {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 2.25rem 1.5rem 2rem;
+    text-align: center;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.invis-stat:hover {
+    box-shadow: 0 10px 32px rgba(6, 28, 99, 0.1);
+    transform: translateY(-4px);
+}
+
+.invis-stat--featured {
+    background: linear-gradient(160deg, var(--bs-secondary) 0%, #0c2b8c 55%, #088ac7 100%);
+    border-color: transparent;
+}
+
+.invis-stat__value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--bs-primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.invis-stat__value span {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.invis-stat--featured .invis-stat__value {
+    color: #fff;
+}
+
+.invis-stat__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.invis-stat--featured .invis-stat__label {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 575.98px) {
+    .invis-stat { padding: 1.75rem 1.25rem 1.5rem; }
+    .invis-stat__value { font-size: 2.5rem; }
+}
+
+/* =============================================
+   3D CBCT PAGE
+   ============================================= */
+
+/* Machine image container (white-bg product photo) */
+.cbct-machine-wrap {
+    position: relative;
+    background: #f8fafc;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 2.5rem 2rem 0;
+    text-align: center;
+}
+
+.cbct-machine-img {   
+    transition: transform 0.4s ease;
+}
+
+.cbct-machine-wrap:hover .cbct-machine-img {
+    transform: scale(1.04);
+}
+
+/* Use-case cards (icon + text) */
+.cbct-use-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 1.4rem 1.25rem;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.cbct-use-card:hover {
+    box-shadow: 0 8px 24px rgba(6, 28, 99, 0.09);
+    transform: translateY(-3px);
+}
+
+.cbct-use-card__icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: rgba(8, 138, 199, 0.1);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cbct-use-card__text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--bs-secondary);
+    line-height: 1.55;
+    margin: 0;
+    padding-top: 0.2rem;
+}
+
+@media (max-width: 575.98px) {
+    .cbct-machine-wrap { padding: 1.75rem 1.25rem 0; }
+    .cbct-use-card { padding: 1.1rem 1rem; }
+}
+
+/* ── Nitrous Oxide Sedation · Highlight Callout ── */
+.nos-highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(8, 138, 199, 0.07);
+    border-left: 4px solid var(--bs-primary);
+    border-radius: 0 12px 12px 0;
+    padding: 1.25rem 1.25rem 1.25rem 1rem;
+    margin-top: 1.5rem;
+}
+
+.nos-highlight__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--bs-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.nos-highlight__text {
+    font-size: 0.95rem;
+    color: var(--bs-secondary);
+    line-height: 1.65;
+    margin: 0;
+    padding-top: 0.2rem;
+}
+
+/* ── Same Day Crowns · Step Cards ── */
+.sdc-step-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 1.25rem 1.1rem;
+    height: 100%;
+    transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.sdc-step-card:hover {
+    box-shadow: 0 8px 28px rgba(6, 28, 99, 0.1);
+    transform: translateY(-3px);
+}
+
+.sdc-step-card__num {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--bs-primary);
+    opacity: 0.18;
+    line-height: 1;
+    min-width: 2.2rem;
+    flex-shrink: 0;
+}
+
+.sdc-step-card__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 0.35rem;
+}
+
+.sdc-step-card__desc {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ── Same Day Crowns · Benefit Cards ── */
+.sdc-benefit-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--color-light-bg);
+    border-radius: 14px;
+    padding: 1.25rem 1.1rem;
+    height: 100%;
+    transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.sdc-benefit-card--full {
+    background: rgba(8, 138, 199, 0.06);
+    border: 1px solid rgba(8, 138, 199, 0.18);
+}
+
+.sdc-benefit-card:hover {
+    box-shadow: 0 8px 28px rgba(6, 28, 99, 0.09);
+    transform: translateY(-3px);
+}
+
+.sdc-benefit-card__icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--bs-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sdc-benefit-card__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 0.3rem;
+}
+
+.sdc-benefit-card__desc {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ── Waterlase · Badge Cards ── */
+.wl-badge-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--color-light-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 1.1rem 0.75rem;
+    text-align: center;
+    transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.wl-badge-card:hover {
+    box-shadow: 0 6px 20px rgba(6, 28, 99, 0.1);
+    transform: translateY(-3px);
+}
+
+.wl-badge-card__icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--bs-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wl-badge-card__label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    letter-spacing: 0.02em;
+}
+
+/* ── Glidewell Clear Aligners · Image Wrap & Pills ── */
+.gca-img-wrap {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(6, 28, 99, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gca-img-wrap:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(6, 28, 99, 0.14);
+}
+
+.gca-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gca-pill {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(8, 138, 199, 0.08);
+    color: var(--bs-primary);
+    border: 1px solid rgba(8, 138, 199, 0.22);
+    border-radius: 50px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}

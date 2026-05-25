@@ -1,4 +1,5 @@
 <?php
+$pageTitle = 'Bensalem Smiles 4 U';
 include 'data/data.php';
 include 'components/header.php';
 ?>

@@ -1,10 +1,19 @@
+<?php
+function navActive(string $page): string {
+    return basename($_SERVER['PHP_SELF']) === $page ? ' active' : '';
+}
+
+function navDropdownActive(array $pages): string {
+    return in_array(basename($_SERVER['PHP_SELF']), $pages, true) ? ' active' : '';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bensalem Smiles 4 u</title>
+    <title><?= isset($pageTitle) ? htmlspecialchars($pageTitle) . ' | Bensalem Smiles 4 U' : 'Bensalem Smiles 4 U' ?></title>
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="shortcut icon" href="img/favicon-32x32.png">
 
@@ -51,7 +60,7 @@
     <!-- header-->
     <header class="sticky-top shadow-sm">
         <!-- Section 01: Top Utility Bar -->
-        <div class="header-top py-2 text-white bg-secondary border-bottom border-opacity-10 border-white">
+        <div class="header-top py-2 text-white bg-secondary border-bottom border-opacity-10 border-white d-none d-md-block">
             <div class="container-90">
                 <div class="row align-items-center g-2">
                     <div class="col-12 col-md-8 text-center text-md-start fs-7">
@@ -96,7 +105,7 @@
         <div class="header-main py-1 bg-white">
             <div class="container-90 d-flex align-items-center justify-content-between">
                 <!-- Logo -->
-                <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
+                <a href="index.php" class="logo d-flex align-items-center text-decoration-none">
                   <img src="img/logo.svg" alt="Bensalem Smiles 4 U Logo" height="80"  class="me-2">
                 </a>
 
@@ -104,27 +113,30 @@
                 <nav class="d-none d-xl-flex align-items-center header-nav">
                     <ul class="nav align-items-center gap-1">
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link-custom active">Home</a>
+                            <a href="index.php" class="nav-link-custom<?= navActive('index.php') ?>">Home</a>
                         </li>
 
                         <!-- Clinic Dropdown -->
+                        <?php $clinicPages = ['about.php','modern-clinic.php','doctors.php','fair-prices.php','painless-dentistry.php','new-technology.php']; ?>
                         <li class="nav-item dropdown">
-                            <a href="#" class="nav-link-custom dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            <a href="#" class="nav-link-custom dropdown-toggle<?= navDropdownActive($clinicPages) ?>" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Clinic
                             </a>
                             <ul class="dropdown-menu border-0 shadow-lg mt-2 py-2">
-                                <li><a class="dropdown-item py-2 px-3 fw-medium" href="#about">About Clinic</a></li>
-                                <li><a class="dropdown-item py-2 px-3 fw-medium" href="#doctors">Qualified Doctors</a></li>
-                                <li><a class="dropdown-item py-2 px-3 fw-medium" href="javascript:void(0)">Fair Prices</a></li>
-                                <li><a class="dropdown-item py-2 px-3 fw-medium" href="javascript:void(0)">Painless Dentistry</a></li>
-                                <li><a class="dropdown-item py-2 px-3 fw-medium" href="javascript:void(0)">New Technology</a></li>
+                                <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('about.php') ?>" href="about.php">About Us</a></li>
+                                <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('modern-clinic.php') ?>" href="modern-clinic.php">Modern Clinic</a></li>
+                                <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('doctors.php') ?>" href="doctors.php">Qualified Doctors</a></li>
+                                <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('fair-prices.php') ?>" href="fair-prices.php">Fair Prices</a></li>
+                                <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('painless-dentistry.php') ?>" href="painless-dentistry.php">Painless Dentistry</a></li>
+                                <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('new-technology.php') ?>" href="new-technology.php">New Technology</a></li>
                             </ul>
                         </li>
 
                         <!-- Dental Services Dropdown (Mega Menu) -->
+                        <?php $servicePages = ['preventive-dentistry.php','pediatric-dentistry.php','root-canal-treatment.php','complete-partial-dentures.php','cosmetic-dentistry.php','dental-fillings.php','full-mouth-rehabilitation.php','implant-dental.php','invisalign.php','oral-surgery.php','tooth-whitening.php','3dcbct.php','nitrus=-oxide-sedation.php','same-day-crowns.php','waterlase.php','glidewell-clear-aligners.php']; ?>
                         <li class="nav-item dropdown position-static dropdown-mega">
-                            <a href="#" class="nav-link-custom dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            <a href="#" class="nav-link-custom dropdown-toggle<?= navDropdownActive($servicePages) ?>" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Dental Services
                             </a>
@@ -135,51 +147,48 @@
                                     <div class="row g-2">
                                         <div class="col-md-3">
                                             <ul class="list-unstyled mega-menu-list mb-0">
-                                                <li><a class="dropdown-item rounded py-2 px-3"
-                                                        href="#preventive-dentistry">Preventive Dentistry</a></li>
-                                                <li><a class="dropdown-item rounded py-2 px-3"
-                                                        href="#pediatric-dentistry">Pediatric Dentistry</a></li>
-                                                <li><a class="dropdown-item rounded py-2 px-3" href="#root-canal">Root
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('preventive-dentistry.php') ?>"
+                                                        href="preventive-dentistry.php">Preventive Dentistry</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('pediatric-dentistry.php') ?>"
+                                                        href="pediatric-dentistry.php">Pediatric Dentistry</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('root-canal-treatment.php') ?>" href="root-canal-treatment.php">Root
                                                         Canal Treatment</a></li>
-                                                <li><a class="dropdown-item rounded py-2 px-3"
-                                                        href="#complete-partial-dentures">Complete Partial Dentures</a>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('complete-partial-dentures.php') ?>"
+                                                        href="complete-partial-dentures.php">Complete Partial Dentures</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-md-3">
                                             <ul class="list-unstyled mega-menu-list mb-0">
-                                                <li><a class="dropdown-item rounded py-2 px-3"
-                                                        href="#cosmetic-dentistry">Cosmetic Dentistry</a></li>
-                                                <li><a class="dropdown-item rounded py-2 px-3"
-                                                        href="#dental-fillings">Dental Fillings</a></li>
-                                                <li><a class="dropdown-item rounded py-2 px-3"
-                                                        href="#full-mouth-rehab">Full Mouth Rehabilitation</a></li>
-                                                <li><a class="dropdown-item rounded py-2 px-3"
-                                                        href="#implant-dental">Implant Dental</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('cosmetic-dentistry.php') ?>"
+                                                        href="cosmetic-dentistry.php">Cosmetic Dentistry</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('dental-fillings.php') ?>"
+                                                        href="dental-fillings.php">Dental Fillings</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('full-mouth-rehabilitation.php') ?>"
+                                                        href="full-mouth-rehabilitation.php">Full Mouth Rehabilitation</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('implant-dental.php') ?>"
+                                                        href="implant-dental.php">Implant Dental</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-3">
                                             <ul class="list-unstyled mega-menu-list mb-0">
-                                                <li><a class="dropdown-item rounded py-2 px-3"
-                                                        href="#invisalign">Invisalign</a></li>
-                                                <li><a class="dropdown-item rounded py-2 px-3" href="#oral-surgery">Oral
-                                                        Surgery</a></li>
-                                                <li><a class="dropdown-item rounded py-2 px-3"
-                                                        href="#tooth-whitening">Tooth Whitening</a></li>
-                                                <li><a class="dropdown-item rounded py-2 px-3" href="#3d-cbct">3D
-                                                        CBCT</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('invisalign.php') ?>"
+                                                        href="invisalign.php">Invisalign</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('oral-surgery.php') ?>" href="oral-surgery.php">Oral Surgery</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('tooth-whitening.php') ?>" href="tooth-whitening.php">Tooth Whitening</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('3dcbct.php') ?>" href="3dcbct.php">3D CBCT</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-3">
                                             <ul class="list-unstyled mega-menu-list mb-0">
-                                                <li><a class="dropdown-item rounded py-2 px-3"
-                                                        href="#nitrus-oxide">Nitrus Oxide Sedation</a></li>
-                                                <li><a class="dropdown-item rounded py-2 px-3"
-                                                        href="#same-day-crowns">Same Day Crowns</a></li>
-                                                <li><a class="dropdown-item rounded py-2 px-3"
-                                                        href="#waterlase">Waterlase</a></li>
-                                                <li><a class="dropdown-item rounded py-2 px-3"
-                                                        href="#glidewell-aligners">Glidewell Clear Aligners</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('nitrus=-oxide-sedation.php') ?>"
+                                                        href="nitrus=-oxide-sedation.php">Nitrus Oxide Sedation</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('same-day-crowns.php') ?>"
+                                                        href="same-day-crowns.php">Same Day Crowns</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('waterlase.php') ?>"
+                                                        href="waterlase.php">Waterlase</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('glidewell-clear-aligners.php') ?>"
+                                                        href="glidewell-clear-aligners.php">Glidewell Clear Aligners</a></li>
                                             </ul>
                                         </div>
                                     </div>

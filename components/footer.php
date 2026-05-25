@@ -147,7 +147,7 @@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenuOffcanvas"
         aria-labelledby="mobileMenuOffcanvasLabel">
         <div class="offcanvas-header border-bottom py-3 px-4">
-            <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
+            <a href="index.php" class="logo d-flex align-items-center text-decoration-none">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#logoGradientMobile)"
                     stroke-width="2.5" class="me-2">
                     <defs>
@@ -168,7 +168,7 @@
             <div class="accordion accordion-flush" id="offcanvasMenuAccordion">
                 <!-- Home -->
                 <div class="accordion-item border-0">
-                    <a href="index.html"
+                    <a href="index.php"
                         class="nav-link py-3 fw-semibold text-secondary text-decoration-none d-block border-bottom">Home</a>
                 </div>
 
@@ -185,8 +185,12 @@
                         data-bs-parent="#offcanvasMenuAccordion">
                         <div class="accordion-body py-2 px-3 bg-light rounded">
                             <ul class="list-unstyled mb-0">
-                                <li><a class="nav-link py-2 text-muted fw-medium" href="#about">About Clinic</a></li>
-                                <li><a class="nav-link py-2 text-muted fw-medium" href="#doctors">Doctors</a></li>
+                                <li><a class="nav-link py-2 text-muted fw-medium" href="about.php">About Us</a></li>
+                                <li><a class="nav-link py-2 text-muted fw-medium" href="modern-clinic.php">Modern Clinic</a></li>
+                                <li><a class="nav-link py-2 text-muted fw-medium" href="#doctors">Qualified Doctors</a></li>
+                                <li><a class="nav-link py-2 text-muted fw-medium" href="fair-prices.php">Fair Prices</a></li>
+                                <li><a class="nav-link py-2 text-muted fw-medium" href="painless-dentistry.php">Painless Dentistry</a></li>
+                                <li><a class="nav-link py-2 text-muted fw-medium" href="new-technology.php">New Technology</a></li>
                             </ul>
                         </div>
                     </div>
