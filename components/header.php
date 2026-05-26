@@ -197,34 +197,32 @@ function navDropdownActive(array $pages): string {
                         </li>
 
                         <!-- Facial Esthetics Dropdown -->
+                        <?php $facialPages = ['botox.php','laser-hair-removal.php','skin-treatments.php','preime-dermafacial.php']; ?>
                         <li class="nav-item dropdown">
-                            <a href="#" class="nav-link-custom dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            <a href="#" class="nav-link-custom dropdown-toggle<?= navDropdownActive($facialPages) ?>" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Facial Esthetics
                             </a>
                             <ul class="dropdown-menu border-0 shadow-lg mt-2 py-2" style="min-width: 320px;">
-                                <li><a class="dropdown-item py-2 px-3 fw-medium" href="#botox">Botox, Dermal Fillers,
+                                <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('botox.php') ?>" href="botox.php">Botox, Dermal Fillers,
                                         TMJ Pain Management</a></li>
-                                <li><a class="dropdown-item py-2 px-3 fw-medium" href="#laser-hair-removal">Laser Hair
-                                        Removal</a></li>
-                                <li><a class="dropdown-item py-2 px-3 fw-medium" href="#v30-skin-treatment">V30 Skin
-                                        Treatment</a></li>
-                                <li><a class="dropdown-item py-2 px-3 fw-medium" href="#preime-dermafacial">Preime
-                                        Dermafacial</a></li>
+                                <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('laser-hair-removal.php') ?>" href="laser-hair-removal.php">Laser Hair Removal</a></li>
+                                <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('skin-treatments.php') ?>" href="skin-treatments.php">V30 Skin Treatment</a></li>
+                                <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('preime-dermafacial.php') ?>" href="preime-dermafacial.php">Preime Dermafacial</a></li>
                             </ul>
                         </li>
 
                         <li class="nav-item">
-                            <a href="#post-care" class="nav-link-custom">Post care</a>
+                            <a href="post-care.php" class="nav-link-custom<?= navActive('post-care.php') ?>">Post care</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#special-offers" class="nav-link-custom">Special Offers</a>
+                            <a href="special-offers.php" class="nav-link-custom<?= navActive('special-offers.php') ?>">Special Offers</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#gallery" class="nav-link-custom">Gallery</a>
+                            <a href="gallery.php" class="nav-link-custom<?= navActive('gallery.php') ?>">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#contact" class="nav-link-custom">Contact us</a>
+                            <a href="contact.php" class="nav-link-custom<?= navActive('contact.php') ?>">Contact us</a>
                         </li>
                     </ul>
                 </nav>

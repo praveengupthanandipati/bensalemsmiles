@@ -4243,3 +4243,553 @@ header {
     font-size: 0.8rem;
     font-weight: 600;
 }
+
+/* ── Laser Hair Removal · Before/After Frame ── */
+.lhr-before-after {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 14px 44px rgba(6, 28, 99, 0.13);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lhr-before-after:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 56px rgba(6, 28, 99, 0.17);
+}
+
+.lhr-before-after__img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.lhr-before-after__label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(0deg, rgba(6,28,99,0.75) 0%, transparent 100%);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 1.5rem 1.25rem 0.85rem;
+}
+
+/* ── Laser Hair Removal · Benefit Cards ── */
+.lhr-benefit-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 1.1rem 1.1rem;
+    transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.lhr-benefit-card--accent {
+    background: rgba(8, 138, 199, 0.05);
+    border-color: rgba(8, 138, 199, 0.2);
+}
+
+.lhr-benefit-card:hover {
+    box-shadow: 0 8px 24px rgba(6, 28, 99, 0.09);
+    transform: translateY(-3px);
+}
+
+.lhr-benefit-card__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--bs-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.lhr-benefit-card__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.lhr-benefit-card__desc {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ── V30 Skin Treatments · Service Cards ── */
+.v30-service-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    transition: box-shadow 0.22s ease, transform 0.22s ease, border-color 0.22s ease;
+}
+
+.v30-service-card:hover {
+    box-shadow: 0 6px 22px rgba(6, 28, 99, 0.1);
+    transform: translateY(-3px);
+    border-color: rgba(8, 138, 199, 0.3);
+}
+
+.v30-service-card__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(8, 138, 199, 0.1);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.v30-service-card__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--bs-secondary);
+    line-height: 1.4;
+}
+
+/* ── Préime DermaFacial · Technology Cards ── */
+.derma-tech-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 0.9rem 1.1rem;
+    transition: box-shadow 0.22s ease, transform 0.22s ease, border-color 0.22s ease;
+}
+
+.derma-tech-card:hover {
+    box-shadow: 0 6px 22px rgba(6, 28, 99, 0.1);
+    transform: translateY(-2px);
+    border-color: rgba(8, 138, 199, 0.3);
+}
+
+.derma-tech-card__badge {
+    flex-shrink: 0;
+    background: var(--bs-primary);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border-radius: 6px;
+    padding: 0.3rem 0.7rem;
+    white-space: nowrap;
+    margin-top: 0.1rem;
+}
+
+.derma-tech-card__desc {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ── Post Care · Video Cards ── */
+.postcare-video-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.postcare-video-card:hover {
+    box-shadow: 0 12px 36px rgba(6, 28, 99, 0.13);
+    transform: translateY(-4px);
+}
+
+.postcare-video-card__thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.postcare-video-card__img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.postcare-video-card:hover .postcare-video-card__img {
+    transform: scale(1.04);
+}
+
+.postcare-video-card__play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(6, 28, 99, 0.35);
+    color: #fff;
+    transition: background 0.25s ease;
+}
+
+.postcare-video-card:hover .postcare-video-card__play {
+    background: rgba(8, 138, 199, 0.55);
+}
+
+.postcare-video-card__play svg {
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+    width: 52px;
+    height: 52px;
+}
+
+.postcare-video-card__body {
+    padding: 0.9rem 1.1rem;
+}
+
+.postcare-video-card__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--bs-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ── Special Offers · Offer Cards ── */
+.offer-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    padding: 2rem 1.75rem 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.offer-card:hover {
+    box-shadow: 0 12px 36px rgba(6, 28, 99, 0.1);
+    transform: translateY(-3px);
+}
+
+.offer-card--featured {
+    background: linear-gradient(145deg, #061c63 0%, #0c2b8c 60%, #088ac7 100%);
+    border-color: transparent;
+    color: #fff;
+}
+
+.offer-card--featured .offer-card__price,
+.offer-card--featured .offer-card__title {
+    color: #fff;
+}
+
+.offer-card--featured .offer-card__desc {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.offer-card--featured .btn-primary {
+    background: #fff;
+    border-color: #fff;
+    color: var(--bs-secondary);
+}
+
+.offer-card--featured .btn-primary:hover {
+    background: #e8f4fd;
+    border-color: #e8f4fd;
+}
+
+.offer-card--discount {
+    background: rgba(8, 138, 199, 0.05);
+    border-color: rgba(8, 138, 199, 0.25);
+}
+
+.offer-card__badge {
+    display: inline-block;
+    background: var(--bs-primary);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 50px;
+    padding: 0.25rem 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.offer-card--featured .offer-card__badge {
+    background: rgba(255, 255, 255, 0.22);
+    color: #fff;
+}
+
+.offer-card__price {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--bs-secondary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.offer-card__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.offer-card__desc {
+    font-size: 0.875rem;
+    color: #6c757d;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 1.25rem;
+}
+
+/* ── Special Offers · Plan Cards ── */
+.plan-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 2rem 1.75rem 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.plan-card:hover {
+    box-shadow: 0 14px 40px rgba(6, 28, 99, 0.1);
+    transform: translateY(-3px);
+}
+
+.plan-card--featured {
+    background: linear-gradient(145deg, #061c63 0%, #0c2b8c 60%, #088ac7 100%);
+    border-color: transparent;
+    transform: scale(1.03);
+    box-shadow: 0 18px 52px rgba(6, 28, 99, 0.22);
+}
+
+.plan-card--featured:hover {
+    transform: scale(1.03) translateY(-3px);
+    box-shadow: 0 22px 60px rgba(6, 28, 99, 0.28);
+}
+
+.plan-card--featured .plan-card__price,
+.plan-card--featured .plan-card__name {
+    color: #fff;
+}
+
+.plan-card--featured .plan-card__features li {
+    color: rgba(255, 255, 255, 0.88);
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.plan-card--featured .plan-card__features li::before {
+    color: #7dd3fc;
+}
+
+.plan-card__badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 50px;
+    padding: 0.25rem 0.8rem;
+    margin-bottom: 1.25rem;
+}
+
+.plan-card__price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--bs-secondary);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.plan-card__price span {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.65;
+}
+
+.plan-card__name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 1.25rem;
+}
+
+.plan-card__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+}
+
+.plan-card__features li {
+    font-size: 0.875rem;
+    color: #495057;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.plan-card__features li::before {
+    content: "✓";
+    color: var(--bs-primary);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.plan-card__features li:last-child {
+    border-bottom: none;
+}
+
+/* ── Contact Page ── */
+.contact-form__label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--bs-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.contact-form__input {
+    border: 1.5px solid var(--color-border);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: var(--bs-secondary);
+    background: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form__input:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 3px rgba(8, 138, 199, 0.12);
+    outline: none;
+}
+
+.contact-form__textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form__submit {
+    min-width: 180px;
+    transition: opacity 0.2s ease;
+}
+
+.contact-form__submit:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+}
+
+/* Success alert */
+.contact-success {
+    background: #ecfdf5;
+    border: 1.5px solid #6ee7b7;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    color: #065f46;
+    margin-bottom: 2rem;
+}
+
+.contact-success__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #6ee7b7;
+    color: #065f46;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Contact Info Cards */
+.contact-info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 2.25rem 1.75rem 1.75rem;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.contact-info-card:hover {
+    box-shadow: 0 12px 36px rgba(6, 28, 99, 0.1);
+    transform: translateY(-4px);
+}
+
+.contact-info-card__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(8, 138, 199, 0.12) 0%, rgba(6, 28, 99, 0.08) 100%);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    flex-shrink: 0;
+}
+
+.contact-info-card__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin-bottom: 0.6rem;
+}
+
+.contact-info-card__text {
+    font-size: 0.9rem;
+    color: #6c757d;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.contact-info-card__phone {
+    color: var(--bs-secondary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contact-info-card__phone:hover {
+    color: var(--bs-primary);
+}
+
+.contact-info-card__link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--bs-primary);
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.contact-info-card__link:hover {
+    text-decoration: underline;
+}
