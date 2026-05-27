@@ -33,7 +33,7 @@ include 'components/header.php';
                     <h2 class="about-title">About Bensalem Smiles 4 U</h2>
                     <p class="about-desc">Thank you for considering our clinic for you and your family's dental needs. We are pleased to welcome you as a new patient and look forward to being of service to you. We provide a full range of general, preventive and cosmetic dental treatments in a relaxed atmosphere, using the latest technology. Our goal is to provide our patients with the best possible dental care in an environment of comfort and compassion.</p>
                     <p class="about-desc">If you are experiencing loose teeth, bleeding gums, sensitivity or pain with your teeth when eating or drinking, please make an appointment with us to discuss your dental health needs. We use advanced proven technology to keep your smile looking the best!</p>
-                    <a href="index.php#doctors" class="btn btn-primary about-btn mt-3">
+                    <a href="doctors.php" class="btn btn-primary about-btn mt-3">
                         Our Qualified Doctors
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -141,7 +141,7 @@ include 'components/header.php';
                     </div>
 
                     <div class="about-action-btns d-flex flex-wrap gap-3">
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+                        <a href="appointment.php" class="btn btn-primary fw-semibold">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2">
                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                                 <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -149,15 +149,15 @@ include 'components/header.php';
                                 <line x1="3" y1="10" x2="21" y2="10"></line>
                             </svg>
                             Get Appointment
-                        </button>
-                        <a href="javascript:void(0)" class="btn btn-outline-secondary fw-semibold">
+                        </a>
+                        <a href="fair-prices.php" class="btn btn-outline-secondary fw-semibold">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2">
                                 <line x1="12" y1="1" x2="12" y2="23"></line>
                                 <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                             </svg>
                             Get Fair Prices
                         </a>
-                        <a href="javascript:void(0)" class="btn btn-outline-primary fw-semibold">
+                        <a href="downloads.php" class="btn btn-outline-primary fw-semibold">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7 10 12 15 17 10"></polyline>
@@ -239,13 +239,13 @@ include 'components/header.php';
             <!-- CTA -->
             <div class="text-center mt-5 reveal reveal-fade-up" data-reveal-delay="100">
                 <p class="text-muted mb-3" style="font-size: 0.95rem;">Ready to experience the Bensalem difference?</p>
-                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+                <a href="appointment.php" class="btn btn-primary btn-lg">
                     Book Your Appointment Today
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
-                </button>
+                </a>
             </div>
 
         </div>

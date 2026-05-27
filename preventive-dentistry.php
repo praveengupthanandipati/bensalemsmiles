@@ -33,16 +33,6 @@ include 'components/header.php';
                     <h2 class="section-heading mt-1 mb-3">Your Smile Deserves Routine Care</h2>
                     <p class="about-desc">Like every other part of our body, teeth also need care. Everyone wants their teeth to look white, clean, and their gums to be healthy. The American Dental Association (ADA) recommends visiting the dentist for routine dental exams as suggested by your dentist.</p>
                     <p class="about-desc">Don't worry — we're here to help. Bensalem Smiles 4 U provides comprehensive preventive dentistry services. Our exams are designed to keep your teeth clean, strong, and white — catching problems early before they become costly treatments.</p>
-                    <div class="d-flex flex-wrap gap-3 mt-4">
-                        <button class="btn btn-primary about-btn" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                            Book an Exam
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </button>
-                        <a href="tel:2156383350" class="btn btn-outline-secondary about-btn">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.84-.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                            (215) 638-3350
-                        </a>
-                    </div>
                 </div>
 
                 <div class="col-12 col-lg-6 reveal reveal-slide-right">
@@ -184,10 +174,6 @@ include 'components/header.php';
                         <li><span class="tech-features__icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span>Recommended every 6 months by the AGD</span></li>
                         <li><span class="tech-features__icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span>Prevents gum disease and early-stage decay</span></li>
                     </ul>
-                    <button class="btn btn-primary about-btn mt-4" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                        Schedule a Cleaning
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </button>
                 </div>
 
             </div>
@@ -222,11 +208,6 @@ include 'components/header.php';
                             <li>Visit the dentist every 6 months for a check-up</li>
                         </ul>
                     </div>
-
-                    <button class="btn btn-primary about-btn mt-4" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                        Book Kids' Appointment
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </button>
                 </div>
 
                 <div class="col-12 col-lg-6 reveal reveal-slide-right">
@@ -254,10 +235,10 @@ include 'components/header.php';
             <h3 style="color: var(--bs-secondary); font-weight: 800;" class="mb-2">Start Your Preventive Care Today</h3>
             <p class="text-muted mb-4" style="font-size:0.975rem;">Regular visits keep small problems from becoming big ones. Let us help protect your smile for life.</p>
             <div class="d-flex flex-wrap gap-3 justify-content-center">
-                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+                <a href="appointment.php" class="btn btn-primary btn-lg">
                     Get an Appointment
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                </a>
                 <a href="tel:2156383350" class="btn btn-outline-secondary btn-lg">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.84-.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     (215) 638-3350

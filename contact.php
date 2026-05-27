@@ -128,7 +128,7 @@ include 'components/header.php';
                         </div>
                         <h4 class="contact-info-card__title">Our Address</h4>
                         <p class="contact-info-card__text">1044 Byberry Rd<br>Bensalem, PA 19020</p>
-                        <a href="https://maps.google.com/?q=1044+Byberry+Rd+Bensalem+PA+19020" target="_blank" rel="noopener" class="contact-info-card__link">Get Directions &rarr;</a>
+                        <a href="https://maps.app.goo.gl/r4JvuEnga3rAs5h79" target="_blank" rel="noopener" class="contact-info-card__link">Get Directions &rarr;</a>
                     </div>
                 </div>
 

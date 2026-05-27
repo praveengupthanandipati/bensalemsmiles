@@ -37,7 +37,6 @@ include 'components/header.php';
     <section class="py-5 py-lg-6 bg-white">
         <div class="container-90">
             <div class="row align-items-center g-4 g-lg-5">
-
                 <!-- Text -->
                 <div class="col-12 col-lg-6 reveal reveal-slide-left">
                     <span class="section-eyebrow">Cosmetic Dentistry</span>
@@ -71,11 +70,6 @@ include 'components/header.php';
                             Trusted by over 10 million patients worldwide
                         </li>
                     </ul>
-
-                    <a href="javascript:void(0)" class="btn btn-primary about-btn mt-4">
-                        Book a Whitening Session
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </a>
                 </div>
 
                 <!-- Tech Panel -->
@@ -341,10 +335,10 @@ include 'components/header.php';
                         </li>
                     </ul>
 
-                    <button class="btn btn-primary about-btn mt-4" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                        Request a CT Consultation
+                    <a href="appointment.php" class="btn btn-primary about-btn mt-4">
+                        Book An Appointment
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </button>
+                    </a>
                 </div>
 
             </div>

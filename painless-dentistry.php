@@ -78,17 +78,11 @@ include 'components/header.php';
                             <span>Ideal for anxious or needle-phobic patients</span>
                         </li>
                     </ul>
-
-                    <button class="btn btn-primary about-btn mt-4" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                        Ask About Sedation
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </button>
                 </div>
 
                 <!-- Panel -->
                 <div class="col-12 col-lg-6 reveal reveal-slide-right">
                     <div class="tech-panel">
-
                         <div class="tech-panel__icon">
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                         </div>
@@ -204,10 +198,10 @@ include 'components/header.php';
                         </li>
                     </ul>
 
-                    <button class="btn btn-primary about-btn mt-4" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                        Book a Comfortable Visit
+                    <a href="appointment.php" class="btn btn-primary btn-lg mt-3">
+                        Get an Appointment
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </button>
+                    </a>
                 </div>
 
             </div>
@@ -296,10 +290,10 @@ include 'components/header.php';
             <h3 class="fw-800 mb-2" style="color: var(--bs-secondary); font-weight: 800;">Ready for a Stress-Free Visit?</h3>
             <p class="text-muted mb-4" style="font-size: 0.975rem;">Our team will walk you through every sedation option and find the approach that's right for you.</p>
             <div class="d-flex flex-wrap gap-3 justify-content-center">
-                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+                <a href="appointment.php" class="btn btn-primary btn-lg">
                     Get an Appointment
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                </a>
                 <a href="tel:2156383350" class="btn btn-outline-secondary btn-lg">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.84-.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     (215) 638-3350

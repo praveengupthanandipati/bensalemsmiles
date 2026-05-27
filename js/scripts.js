@@ -115,26 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Open Appointment Modal smoothly from Offcanvas trigger
-        const mobileApptBtn = document.getElementById("mobileAppointmentTrigger");
-        if (mobileApptBtn) {
-            mobileApptBtn.addEventListener("click", () => {
-                const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvasEl) || new bootstrap.Offcanvas(offcanvasEl);
-                
-                // Set up event listener to trigger modal AFTER offcanvas is fully hidden
-                const triggerModalAfterHide = () => {
-                    const appointmentModalEl = document.getElementById("appointmentModal");
-                    if (appointmentModalEl) {
-                        const modalInstance = new bootstrap.Modal(appointmentModalEl);
-                        modalInstance.show();
-                    }
-                    offcanvasEl.removeEventListener("hidden.bs.offcanvas", triggerModalAfterHide);
-                };
-                
-                offcanvasEl.addEventListener("hidden.bs.offcanvas", triggerModalAfterHide);
-                offcanvasInstance.hide();
-            });
-        }
     }
 });
 

@@ -61,7 +61,7 @@ include 'components/header.php';
                         <div class="offer-card__price">Free</div>
                         <h3 class="offer-card__title">Consultation</h3>
                         <p class="offer-card__desc">For Implants, Invisalign &amp; Dentures</p>
-                        <a href="contact.php" class="btn btn-primary mt-auto">Book Now</a>
+                        <!-- <a href="contact.php" class="btn btn-primary mt-auto">Book Now</a> -->
                     </div>
                 </div>
 
@@ -70,7 +70,7 @@ include 'components/header.php';
                         <div class="offer-card__price">$79</div>
                         <h3 class="offer-card__title">Adult Patient</h3>
                         <p class="offer-card__desc">Emergency Exam with 1 X-Ray</p>
-                        <a href="contact.php" class="btn btn-outline-primary mt-auto">Book Now</a>
+                        <!-- <a href="contact.php" class="btn btn-outline-primary mt-auto">Book Now</a> -->
                     </div>
                 </div>
 
@@ -79,7 +79,7 @@ include 'components/header.php';
                         <div class="offer-card__price">$98</div>
                         <h3 class="offer-card__title">Cleaning</h3>
                         <p class="offer-card__desc">General Cleaning</p>
-                        <a href="contact.php" class="btn btn-outline-primary mt-auto">Book Now</a>
+                        <!-- <a href="contact.php" class="btn btn-outline-primary mt-auto">Book Now</a> -->
                     </div>
                 </div>
 
@@ -111,7 +111,7 @@ include 'components/header.php';
                             <li>Basic X-Rays</li>
                             <li>10% Off All Procedures</li>
                         </ul>
-                        <a href="contact.php" class="btn btn-outline-primary w-100 mt-auto">Get Started</a>
+                        <!-- <a href="contact.php" class="btn btn-outline-primary w-100 mt-auto">Get Started</a> -->
                     </div>
                 </div>
 
@@ -126,7 +126,7 @@ include 'components/header.php';
                             <li>Full Mouth X-Ray</li>
                             <li>20% Off All Procedures</li>
                         </ul>
-                        <a href="contact.php" class="btn btn-light w-100 mt-auto fw-semibold">Get Started</a>
+                        <!-- <a href="contact.php" class="btn btn-light w-100 mt-auto fw-semibold">Get Started</a> -->
                     </div>
                 </div>
 
@@ -140,7 +140,7 @@ include 'components/header.php';
                             <li>3D X-Ray Scan</li>
                             <li>25% Off All Procedures</li>
                         </ul>
-                        <a href="contact.php" class="btn btn-outline-primary w-100 mt-auto">Get Started</a>
+                        <!-- <a href="contact.php" class="btn btn-outline-primary w-100 mt-auto">Get Started</a> -->
                     </div>
                 </div>
 
@@ -167,7 +167,7 @@ include 'components/header.php';
                         <div class="offer-card__price">$129</div>
                         <h3 class="offer-card__title">New Adult Patient</h3>
                         <p class="offer-card__desc">Includes exam, X-ray &amp; teeth cleaning</p>
-                        <a href="contact.php" class="btn btn-outline-primary mt-auto">Book Now</a>
+                        <!-- <a href="contact.php" class="btn btn-outline-primary mt-auto">Book Now</a> -->
                     </div>
                 </div>
 
@@ -176,7 +176,7 @@ include 'components/header.php';
                         <div class="offer-card__price">$99</div>
                         <h3 class="offer-card__title">New Kid Patient</h3>
                         <p class="offer-card__desc">Under 12 years old — fluoride treatment &amp; school forms filled out</p>
-                        <a href="contact.php" class="btn btn-outline-primary mt-auto">Book Now</a>
+                        <!-- <a href="contact.php" class="btn btn-outline-primary mt-auto">Book Now</a> -->
                     </div>
                 </div>
 
@@ -186,7 +186,7 @@ include 'components/header.php';
                         <div class="offer-card__price">$500</div>
                         <h3 class="offer-card__title">Zoom Whitening</h3>
                         <p class="offer-card__desc">Initial Zoom whitening in-office + take-home kit with lifetime refill</p>
-                        <a href="tooth-whitening.php" class="btn btn-primary mt-auto">Learn More</a>
+                        <!-- <a href="tooth-whitening.php" class="btn btn-primary mt-auto">Learn More</a> -->
                     </div>
                 </div>
 
@@ -195,7 +195,7 @@ include 'components/header.php';
                         <div class="offer-card__price">30% Off</div>
                         <h3 class="offer-card__title">Senior Citizens &amp; Veterans</h3>
                         <p class="offer-card__desc">Discount applied on standard fee schedule</p>
-                        <a href="contact.php" class="btn btn-outline-primary mt-auto">Book Now</a>
+                        <!-- <a href="contact.php" class="btn btn-outline-primary mt-auto">Book Now</a> -->
                     </div>
                 </div>
 
@@ -204,7 +204,7 @@ include 'components/header.php';
                         <div class="offer-card__price">$250</div>
                         <h3 class="offer-card__title">3D CBCT Scan</h3>
                         <p class="offer-card__desc">Not included with other promotions</p>
-                        <a href="3dcbct.php" class="btn btn-outline-primary mt-auto">Learn More</a>
+                        <!-- <a href="3dcbct.php" class="btn btn-outline-primary mt-auto">Learn More</a> -->
                     </div>
                 </div>
 
@@ -226,7 +226,7 @@ include 'components/header.php';
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="me-2" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg>
                     (215) 638-3350
                 </a>
-                <a href="contact.php" class="btn btn-outline-light btn-lg px-4 fw-semibold">
+                <a href="appointment.php" class="btn btn-outline-light btn-lg px-4 fw-semibold">
                     Request Appointment
                 </a>
             </div>

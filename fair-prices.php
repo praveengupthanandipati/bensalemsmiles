@@ -27,17 +27,16 @@ include 'components/header.php';
     <section class="py-5 py-lg-6 bg-white">
         <div class="container-90">
             <div class="row align-items-center g-4 g-lg-5">
-
                 <!-- Text -->
                 <div class="col-12 col-lg-7 reveal reveal-slide-left">
                     <span class="section-eyebrow">Affordable Care</span>
                     <h2 class="section-heading mt-1 mb-3">Quality Dental Care<br class="d-none d-md-block"> Without the High Price Tag</h2>
                     <p class="about-desc">At Bensalem Smiles 4 U, we firmly believe that every patient deserves access to exceptional dental care — regardless of their financial situation. Our transparent, straightforward pricing means no hidden fees, no surprises, and no stress.</p>
                     <p class="about-desc">Whether you're a new patient, a senior, a veteran, or a family looking for affordable preventive care, we have flexible options designed with you in mind. Our in-house preventive plans are a perfect alternative to traditional dental insurance.</p>
-                    <button class="btn btn-primary about-btn mt-2" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+                    <a href="appointment.php" class="btn btn-primary about-btn mt-2">
                         Book an Appointment
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Value Pills -->
@@ -113,10 +112,7 @@ include 'components/header.php';
                             <li>Discuss your smile goals &amp; concerns</li>
                             <li>Receive a personalized care overview</li>
                             <li>No pressure, no commitment</li>
-                        </ul>
-                        <button class="btn btn-outline-success w-100 mt-auto pt-3" style="border-radius: 10px; font-weight: 600;" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                            Book Free Visit
-                        </button>
+                        </ul>                       
                     </div>
                 </div>
 
@@ -137,10 +133,7 @@ include 'components/header.php';
                             <li>Comprehensive clinical exam</li>
                             <li>Digital X-rays included</li>
                             <li>Immediate pain assessment &amp; plan</li>
-                        </ul>
-                        <button class="btn btn-primary w-100 mt-auto pt-3" style="border-radius: 10px; font-weight: 600;" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                            Book Emergency Visit
-                        </button>
+                        </ul>                      
                     </div>
                 </div>
 
@@ -161,10 +154,7 @@ include 'components/header.php';
                             <li>Comprehensive oral exam</li>
                             <li>Necessary digital X-rays</li>
                             <li>Oral hygiene counseling</li>
-                        </ul>
-                        <button class="btn btn-primary w-100 mt-auto pt-3" style="border-radius: 10px; font-weight: 600;" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                            Book Cleaning
-                        </button>
+                        </ul>                       
                     </div>
                 </div>
 
@@ -189,10 +179,7 @@ include 'components/header.php';
                                 <li>2 routine exams per year</li>
                                 <li>Necessary X-rays included</li>
                                 <li>10% off all other treatments</li>
-                            </ul>
-                            <button class="btn btn-outline-primary w-100 mt-3" style="border-radius: 10px; font-weight: 600;" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                                Get Started
-                            </button>
+                            </ul>                           
                         </div>
                     </div>
 
@@ -210,10 +197,7 @@ include 'components/header.php';
                                 <li>2 routine exams × 2 patients</li>
                                 <li>Necessary X-rays included</li>
                                 <li>15% off all other treatments</li>
-                            </ul>
-                            <button class="btn btn-light w-100 mt-3" style="border-radius: 10px; font-weight: 700; color: var(--bs-secondary);" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                                Get Started
-                            </button>
+                            </ul>                           
                         </div>
                     </div>
 
@@ -228,10 +212,7 @@ include 'components/header.php';
                                 <li>2 routine exams × 4 members</li>
                                 <li>Necessary X-rays included</li>
                                 <li>20% off all other treatments</li>
-                            </ul>
-                            <button class="btn btn-outline-primary w-100 mt-3" style="border-radius: 10px; font-weight: 600;" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                                Get Started
-                            </button>
+                            </ul>                           
                         </div>
                     </div>
 
@@ -346,7 +327,7 @@ include 'components/header.php';
                     <div class="cbct-card__pricing">
                         <div class="cbct-card__amount">$250</div>
                         <div class="cbct-card__note">Per scan · Not combinable</div>
-                        <a href="modern-clinic.php" class="btn btn-light mt-3" style="border-radius: 10px; font-weight: 700; color: var(--bs-secondary); font-size: 0.875rem;">
+                        <a href="technology.php" class="btn btn-light mt-3" style="border-radius: 10px; font-weight: 700; color: var(--bs-secondary); font-size: 0.875rem;">
                             Learn About Our Technology
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
@@ -364,10 +345,10 @@ include 'components/header.php';
             <h3 class="fw-800 mb-2" style="color: var(--bs-secondary); font-weight: 800;">Have Questions About Pricing?</h3>
             <p class="text-muted mb-4" style="font-size: 0.975rem;">Our team is happy to walk you through every option and find a plan that works for your budget.</p>
             <div class="d-flex flex-wrap gap-3 justify-content-center">
-                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+                <a href="appointment.php" class="btn btn-primary btn-lg">
                     Get an Appointment
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                </a>
                 <a href="tel:2156383350" class="btn btn-outline-secondary btn-lg">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.84-.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     (215) 638-3350

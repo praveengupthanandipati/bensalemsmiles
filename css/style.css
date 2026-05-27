@@ -4001,6 +4001,10 @@ header {
     text-align: center;
 }
 
+.btn{
+    line-height: 200%;
+}
+
 .cbct-machine-img {   
     transition: transform 0.4s ease;
 }
@@ -4792,4 +4796,398 @@ header {
 
 .contact-info-card__link:hover {
     text-decoration: underline;
+}
+
+/* ── Downloads Table ── */
+.downloads-table-wrap {
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(6, 28, 99, 0.07);
+}
+
+.downloads-table thead {
+    background: linear-gradient(135deg, #061c63 0%, #0c2b8c 60%, #088ac7 100%);
+}
+
+.downloads-table__th {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 1rem 1.25rem;
+    border: none;
+}
+
+.downloads-table__row {
+    transition: background 0.18s ease;
+}
+
+.downloads-table__row:nth-child(even) {
+    background: rgba(8, 138, 199, 0.03);
+}
+
+.downloads-table__row:hover {
+    background: rgba(8, 138, 199, 0.07);
+}
+
+.downloads-table__row td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9rem;
+}
+
+.downloads-table__row:last-child td {
+    border-bottom: none;
+}
+
+.downloads-table__sno {
+    font-weight: 700;
+    color: var(--bs-primary);
+    font-size: 0.95rem !important;
+}
+
+.downloads-table__name {
+    font-weight: 600;
+    color: var(--bs-secondary);
+}
+
+.downloads-table__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(8, 138, 199, 0.1);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.downloads-table__btn {
+    background: rgba(8, 138, 199, 0.08);
+    color: var(--bs-primary);
+    border: 1.5px solid rgba(8, 138, 199, 0.25);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.downloads-table__btn:hover {
+    background: var(--bs-primary);
+    color: #fff;
+    border-color: var(--bs-primary);
+}
+
+/* ── FAQ Page ── */
+.faq-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.faq-tab {
+    background: #fff;
+    border: 1.5px solid var(--color-border);
+    border-radius: 50px;
+    color: var(--bs-secondary);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.4rem 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.faq-tab:hover {
+    border-color: var(--bs-primary);
+    color: var(--bs-primary);
+}
+
+.faq-tab.active {
+    background: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #fff;
+}
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1.5px solid var(--color-border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item:has(.faq-item__btn:not(.collapsed)) {
+    border-color: var(--bs-primary);
+    box-shadow: 0 4px 20px rgba(8, 138, 199, 0.1);
+}
+
+.faq-item__heading {
+    margin: 0;
+}
+
+.faq-item__btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.1rem 1.25rem;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.faq-item__btn:hover {
+    background: rgba(8, 138, 199, 0.04);
+}
+
+.faq-item__btn:not(.collapsed) {
+    background: rgba(8, 138, 199, 0.05);
+}
+
+.faq-item__num {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--bs-primary);
+    opacity: 0.5;
+    flex-shrink: 0;
+    min-width: 24px;
+}
+
+.faq-item__q {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--bs-secondary);
+    line-height: 1.5;
+}
+
+.faq-item__badge {
+    display: none;
+    flex-shrink: 0;
+    font-size: 0.68rem;
+    font-weight: 700;
+    background: rgba(8, 138, 199, 0.08);
+    color: var(--bs-primary);
+    border: 1px solid rgba(8, 138, 199, 0.2);
+    border-radius: 50px;
+    padding: 0.2rem 0.65rem;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    .faq-item__badge {
+        display: inline-block;
+    }
+}
+
+.faq-item__icon {
+    flex-shrink: 0;
+    color: var(--bs-primary);
+    transition: transform 0.25s ease;
+    display: flex;
+    align-items: center;
+}
+
+.faq-item__btn:not(.collapsed) .faq-item__icon {
+    transform: rotate(180deg);
+}
+
+.faq-item__body {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+    padding-left: calc(1.25rem + 24px + 1rem);
+    font-size: 0.9rem;
+    color: #495057;
+    line-height: 1.75;
+    border-top: 1px solid var(--color-border);
+}
+
+.faq-link {
+    color: var(--bs-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.faq-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 575px) {
+    .faq-item__btn {
+        padding: 0.9rem 1rem;
+        gap: 0.75rem;
+    }
+
+    .faq-item__q {
+        font-size: 0.875rem;
+    }
+
+    .faq-item__body {
+        padding: 0.85rem 1rem 1rem;
+    }
+}
+
+/* ── Refer a Friend Page ── */
+.raf-offer-card {
+    background: linear-gradient(145deg, #061c63 0%, #0c2b8c 60%, #088ac7 100%);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(6, 28, 99, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.raf-offer-card::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+
+.raf-offer-card__badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 50px;
+    padding: 0.3rem 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.raf-offer-card__amount {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.raf-offer-card__amount span {
+    font-size: 2rem;
+    font-weight: 700;
+    opacity: 0.85;
+}
+
+.raf-offer-card__tagline {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.raf-offer-card__divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 auto 1.5rem;
+    width: 60%;
+}
+
+.raf-offer-card__perks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.raf-offer-card__perks li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.4rem 0;
+}
+
+.raf-offer-card__perks li svg {
+    flex-shrink: 0;
+    color: #7dd3fc;
+    margin-top: 2px;
+}
+
+/* How-it-works steps */
+.raf-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    transition: box-shadow 0.2s ease;
+}
+
+.raf-step:hover {
+    box-shadow: 0 6px 24px rgba(6, 28, 99, 0.08);
+}
+
+.raf-step__num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #061c63, #088ac7);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.raf-step__title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    margin: 0 0 0.2rem;
+}
+
+.raf-step__desc {
+    font-size: 0.82rem;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Form section divider */
+.raf-form-section {
+    background: var(--color-light-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 1.5rem 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.raf-form-section__label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bs-primary);
+    margin-bottom: 1.25rem;
 }

@@ -130,6 +130,8 @@ function navDropdownActive(array $pages): string {
                                 <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('fair-prices.php') ?>" href="fair-prices.php">Fair Prices</a></li>
                                 <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('painless-dentistry.php') ?>" href="painless-dentistry.php">Painless Dentistry</a></li>
                                 <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('new-technology.php') ?>" href="new-technology.php">New Technology</a></li>
+                                <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('downloads.php') ?>" href="downloads.php">Downloads</a></li>
+                                <li><a class="dropdown-item py-2 px-3 fw-medium<?= navActive('faq.php') ?>" href="faq.php">FAQ's</a></li>
                             </ul>
                         </li>
 
@@ -181,8 +183,8 @@ function navDropdownActive(array $pages): string {
                                         </div>
                                         <div class="col-md-3">
                                             <ul class="list-unstyled mega-menu-list mb-0">
-                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('nitrus=-oxide-sedation.php') ?>"
-                                                        href="nitrus=-oxide-sedation.php">Nitrus Oxide Sedation</a></li>
+                                                <li><a class="dropdown-item rounded py-2 px-3<?= navActive('nitrus-oxide-sedation.php') ?>"
+                                                        href="nitrus-oxide-sedation.php">Nitrus Oxide Sedation</a></li>
                                                 <li><a class="dropdown-item rounded py-2 px-3<?= navActive('same-day-crowns.php') ?>"
                                                         href="same-day-crowns.php">Same Day Crowns</a></li>
                                                 <li><a class="dropdown-item rounded py-2 px-3<?= navActive('waterlase.php') ?>"
@@ -229,8 +231,7 @@ function navDropdownActive(array $pages): string {
 
                 <!-- Get Appointment Button & Toggler -->
                 <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-primary d-none d-lg-inline-block" data-bs-toggle="modal"
-                        data-bs-target="#appointmentModal">Get Appointment</button>
+                    <a href="appointment.php" class="btn btn-primary d-none d-lg-inline-block">Get Appointment</a>
 
                     <!-- Mobile Hamburger Button -->
                     <button class="navbar-toggler d-xl-none btn btn-outline-secondary p-2" type="button"

@@ -32,17 +32,7 @@ include 'components/header.php';
                     <span class="section-eyebrow">Gentle Care for Little Smiles</span>
                     <h2 class="section-heading mt-1 mb-3">Dental Care Built for Kids</h2>
                     <p class="about-desc">Pediatric dental specialists are committed to the oral health of children from infancy through their teenage years. They have the experience and qualifications to care for a child's teeth, gums, and mouth throughout the various stages of childhood.</p>
-                    <p class="about-desc">Children are not simply little adults. They are not always ready to be patient and cooperative during a dental exam. Pediatric dentistry knows how to examine and treat kids in ways that make them comfortable — using specially designed equipment in offices decorated with children in mind.</p>
-                    <div class="d-flex flex-wrap gap-3 mt-4">
-                        <button class="btn btn-primary about-btn" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                            Book Kids' Appointment
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </button>
-                        <a href="tel:2156383350" class="btn btn-outline-secondary about-btn">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.84-.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                            (215) 638-3350
-                        </a>
-                    </div>
+                    <p class="about-desc">Children are not simply little adults. They are not always ready to be patient and cooperative during a dental exam. Pediatric dentistry knows how to examine and treat kids in ways that make them comfortable — using specially designed equipment in offices decorated with children in mind.</p>                   
                 </div>
 
                 <div class="col-12 col-lg-6 reveal reveal-slide-right">
@@ -167,9 +157,9 @@ include 'components/header.php';
                         </div>
                         <h4 class="pedi-card__title" style="color:#fff;">Always Here to Help</h4>
                         <p class="pedi-card__desc" style="color:rgba(255,255,255,0.78);">Bensalem Smiles 4 U is committed to helping your child at every step — any problem, any concern. Just contact us once and we'll take care of the rest.</p>
-                        <button class="btn btn-light btn-sm mt-3 fw-700" style="border-radius:8px; font-weight:700; color:var(--bs-secondary);" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+                        <a href="contact.php" class="btn btn-light btn-sm mt-3 fw-700" style="border-radius:8px; font-weight:700; color:var(--bs-secondary);" data-bs-toggle="modal" data-bs-target="#appointmentModal">
                             Contact Us Today
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -233,11 +223,6 @@ include 'components/header.php';
                             </div>
                         </div>
                     </div>
-
-                    <button class="btn btn-primary about-btn mt-4" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                        Schedule Your Child's Visit
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </button>
                 </div>
 
             </div>

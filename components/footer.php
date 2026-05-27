@@ -107,7 +107,7 @@
                                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                             </div>
                             <p class="footer-refer-text">Refer a Friend &amp; Get <strong class="text-primary-light">$25 off</strong> your Next Major Treatment!</p>
-                            <a href="javascript:void(0)" class="footer-refer-btn">
+                            <a href="refer-a-friend.php" class="footer-refer-btn">
                                 Get Reward
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                             </a>
@@ -287,14 +287,12 @@
                 </div>
                 <div class="accordion-item border-0">
                     <a href="#contact"
-                        class="nav-link py-3 fw-semibold text-secondary text-decoration-none d-block border-bottom">Contact
-                        us</a>
+                        class="nav-link py-3 fw-semibold text-secondary text-decoration-none d-block border-bottom">Contact us</a>
                 </div>
             </div>
 
             <div class="mt-4 pt-2">
-                <button id="mobileAppointmentTrigger" class="btn btn-primary w-100 py-2.5 fw-semibold">Get
-                    Appointment</button>
+                <a href="appointment.php" class="btn btn-primary w-100 py-2.5 fw-semibold">Get Appointment</a>
             </div>
         </div>
     </div>
@@ -367,62 +365,6 @@
                 <div class="modal-footer border-0 p-4 pt-0">
                     <a href="tel:2156383350" class="btn btn-secondary w-100 py-2.5 fw-semibold">Call Now: (215)
                         638-3350</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Appointment Modal -->
-    <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 shadow-lg" style="border-radius: 16px; overflow: hidden;">
-                <div class="modal-header bg-gradient-custom text-white py-3 px-4 border-0">
-                    <h5 class="modal-title fw-bold text-white" id="appointmentModalLabel">Request an Appointment</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <form
-                        onsubmit="event.preventDefault(); alert('Your appointment request has been submitted successfully! We will contact you soon.');">
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold text-secondary">Full Name</label>
-                            <input type="text" class="form-control py-2" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold text-secondary">Phone Number</label>
-                            <input type="tel" class="form-control py-2" placeholder="e.g. (215) 638-3350" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold text-secondary">Dental Service</label>
-                            <select class="form-select py-2" required>
-                                <option value="">Choose a service...</option>
-                                <option>Preventive Dentistry</option>
-                                <option>Pediatric Dentistry</option>
-                                <option>Root Canal Treatment</option>
-                                <option>Complete Partial Dentures</option>
-                                <option>Cosmetic Dentistry</option>
-                                <option>Dental Fillings</option>
-                                <option>Full Mouth Rehabilitation</option>
-                                <option>Implant Dental</option>
-                                <option>Invisalign</option>
-                                <option>Oral Surgery</option>
-                                <option>Tooth Whitening</option>
-                                <option>3D CBCT</option>
-                                <option>Nitrus Oxide Sedation</option>
-                                <option>Same Day Crowns</option>
-                                <option>Waterlase</option>
-                                <option>Glidewell Clear Aligners</option>
-                                <option>Botox, Dermal Fillers, TMJ Pain</option>
-                                <option>Laser Hair Removal</option>
-                                <option>V30 Skin Treatment</option>
-                                <option>Preime Dermafacial</option>
-                                <option>Other Treatment</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 py-2.5 mt-2 fw-semibold">Request Call
-                            Back</button>
-                    </form>
                 </div>
             </div>
         </div>
