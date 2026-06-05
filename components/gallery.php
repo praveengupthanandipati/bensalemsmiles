@@ -10,7 +10,7 @@
         </div>
         <div class="gallery-grid">
             <?php foreach ($galleryImages as $i => $img): ?>
-            <div class="gallery-item reveal reveal-fade-up" data-reveal-delay="<?= ($i % 3) * 80 ?>" data-index="<?= $i ?>">
+            <div class="gallery-item reveal reveal-fade-up" data-reveal-delay="<?= ($i % 4) * 80 ?>" data-index="<?= $i ?>">
                 <img src="<?= htmlspecialchars($img['src']) ?>" alt="<?= htmlspecialchars($img['alt']) ?>" loading="lazy">
                 <div class="gallery-item__overlay">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>

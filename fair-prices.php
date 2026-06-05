@@ -112,6 +112,7 @@ include 'components/header.php';
                             <li>Discuss your smile goals &amp; concerns</li>
                             <li>Receive a personalized care overview</li>
                             <li>No pressure, no commitment</li>
+                            <li>Consultation is free when patient brings previous x-rays</li>
                         </ul>                       
                     </div>
                 </div>
@@ -146,7 +147,7 @@ include 'components/header.php';
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                             </div>
                         </div>
-                        <div class="price-card__amount">$98</div>
+                        <div class="price-card__amount">$129</div>
                         <div class="price-card__title">Cleaning Special</div>
                         <p class="price-card__desc">Complete preventive cleaning for new patients — exam, X-rays, and professional polish included.</p>
                         <ul class="price-card__list">
@@ -175,7 +176,7 @@ include 'components/header.php';
                             <div class="price-card__title">Individual Plan</div>
                             <p class="price-card__desc">Annual preventive coverage for one adult patient.</p>
                             <ul class="price-card__list text-start">
-                                <li>2 cleanings per year</li>
+                                <li>One Time Visit</li>
                                 <li>2 routine exams per year</li>
                                 <li>Necessary X-rays included</li>
                                 <li>10% off all other treatments</li>
@@ -257,7 +258,7 @@ include 'components/header.php';
                                 </div>
                             </div>
                             <div class="price-card__amount" style="color: #16a34a;">$99</div>
-                            <div class="price-card__title">Kids Under 12</div>
+                            <div class="price-card__title">Kids Under 6</div>
                             <p class="price-card__desc">Gentle, child-friendly first visit. We make dentistry fun and stress-free for little smiles.</p>
                             <ul class="price-card__list">
                                 <li>Pediatric exam &amp; cleaning</li>
@@ -325,7 +326,7 @@ include 'components/header.php';
                     </div>
 
                     <div class="cbct-card__pricing">
-                        <div class="cbct-card__amount">$250</div>
+                        <div class="cbct-card__amount">$350</div>
                         <div class="cbct-card__note">Per scan · Not combinable</div>
                         <a href="technology.php" class="btn btn-light mt-3" style="border-radius: 10px; font-weight: 700; color: var(--bs-secondary); font-size: 0.875rem;">
                             Learn About Our Technology

@@ -287,3 +287,217 @@ function initTestiReadMore() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }());
+
+/* -----------------------------------------------
+   CHATBOT WIDGET
+----------------------------------------------- */
+(function () {
+    var chatbot  = document.getElementById('chatbot');
+    var toggle   = document.getElementById('chatbotToggle');
+    var closeBtn = document.getElementById('chatbotClose');
+    var messages = document.getElementById('chatbotMessages');
+    var input    = document.getElementById('chatbotInput');
+    var sendBtn  = document.getElementById('chatbotSend');
+    var qrWrap   = document.getElementById('chatbotQuickReplies');
+
+    if (!chatbot) return;
+
+    var opened = false;
+
+    var GREETING = 'Hi there! Welcome to <strong>Bensalem Smiles 4 U</strong>. How can I help you today?';
+
+    var RESPONSES = [
+        {
+            keys: ['book', 'appointment', 'schedule', 'reserve', 'visit'],
+            html: 'You can book an appointment online! <a href="appointment.php">Click here to Book Now &rarr;</a>'
+        },
+        {
+            keys: ['hour', 'open', 'timing', 'when', 'close', 'closing', 'office hours'],
+            html: '<strong>Our Office Hours:</strong><br>Mon &amp; Wed: 9:00 AM &ndash; 6:00 PM<br>Tue &amp; Thu: 8:00 AM &ndash; 6:00 PM<br>Friday: Open once a month (by appointment)<br>Sat &amp; Sun: Closed'
+        },
+        {
+            keys: ['location', 'address', 'where', 'find us', 'direction', 'map'],
+            html: 'We are located at:<br><strong>1044 Byberry Rd, Bensalem, PA 19020</strong><br><a href="contact.php">Get Directions &rarr;</a>'
+        },
+        {
+            keys: ['phone', 'call', 'number', 'contact', 'reach'],
+            html: 'Give us a call at <strong><a href="tel:2156383350">(215) 638-3350</a></strong> &mdash; we\'re happy to help!'
+        },
+        {
+            keys: ['service', 'offer', 'treatment', 'procedure', 'provide', 'our service'],
+            html: '<strong>Dental Services:</strong><br>&bull; <a href="preventive-dentistry.php">Preventive Dentistry</a><br>&bull; <a href="pediatric-dentistry.php">Pediatric Dentistry</a><br>&bull; <a href="root-canal-treatment.php">Root Canal Treatment</a><br>&bull; <a href="complete-partial-dentures.php">Complete &amp; Partial Dentures</a><br>&bull; <a href="cosmetic-dentistry.php">Cosmetic Dentistry</a><br>&bull; <a href="dental-fillings.php">Dental Fillings</a><br>&bull; <a href="full-mouth-rehabilitation.php">Full Mouth Rehabilitation</a><br>&bull; <a href="implant-dental.php">Dental Implants</a><br>&bull; <a href="invisalign.php">Invisalign</a><br>&bull; <a href="oral-surgery.php">Oral Surgery</a><br>&bull; <a href="tooth-whitening.php">Tooth Whitening</a><br>&bull; <a href="3dcbct.php">3D CBCT</a><br>&bull; <a href="nitrus-oxide-sedation.php">Nitrous Oxide Sedation</a><br>&bull; <a href="same-day-crowns.php">Same Day Crowns</a><br>&bull; <a href="waterlase.php">Waterlase</a><br>&bull; <a href="glidewell-clear-aligners.php">Glidewell Clear Aligners</a><br><br><strong>Facial Esthetics:</strong><br>&bull; <a href="botox.php">Botox, Dermal Fillers &amp; TMJ Pain Management</a><br>&bull; <a href="laser-hair-removal.php">Laser Hair Removal</a><br>&bull; <a href="skin-treatments.php">V30 Skin Treatment</a><br>&bull; <a href="preime-dermafacial.php">Preime Dermafacial</a>'
+        },
+        {
+            keys: ['insurance', 'cover', 'plan', 'accept'],
+            html: 'We accept most major dental insurance plans. No insurance? We have affordable patient plans too! <a href="contact.php">Contact us</a> for details.'
+        },
+        {
+            keys: ['implant', 'missing tooth', 'missing teeth'],
+            html: 'We provide permanent, natural-looking dental implants. <a href="implant-dental.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['invisalign', 'brace', 'straighten'],
+            html: 'Yes! We offer Invisalign clear aligners for a discreet way to straighten your teeth. <a href="invisalign.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['glidewell', 'clear aligner'],
+            html: 'We offer Glidewell Clear Aligners &mdash; an affordable, comfortable path to a straighter smile. <a href="glidewell-clear-aligners.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['whiten', 'whitening', 'bleach', 'bright', 'stain'],
+            html: 'Our professional teeth whitening brightens your smile by several shades in one visit! <a href="tooth-whitening.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['crown', 'cerec', 'same day crown'],
+            html: 'We offer Same Day Crowns using advanced CEREC technology &mdash; no second visit needed! <a href="same-day-crowns.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['emergency', 'pain', 'hurt', 'urgent', 'ache', 'broken', 'crack'],
+            html: 'For dental emergencies, call us immediately at <strong><a href="tel:2156383350">(215) 638-3350</a></strong>. We accommodate same-day emergency appointments.'
+        },
+        {
+            keys: ['children', 'child', 'kid', 'kids', 'pediatric', 'baby'],
+            html: 'We welcome children! Our gentle team makes dental visits fun for kids. <a href="pediatric-dentistry.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['cost', 'price', 'fee', 'afford', 'cheap', 'expensive', 'fair price'],
+            html: 'We believe in fair, transparent pricing. <a href="fair-prices.php">View our pricing &rarr;</a>'
+        },
+        {
+            keys: ['root canal'],
+            html: 'Our painless root canal therapy saves your natural tooth and relieves discomfort quickly. <a href="root-canal-treatment.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['denture', 'partial denture', 'complete denture', 'false teeth'],
+            html: 'We provide custom complete and partial dentures for a natural-looking, comfortable fit. <a href="complete-partial-dentures.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['filling', 'cavity', 'decay', 'dental filling'],
+            html: 'We use tooth-colored dental fillings that blend seamlessly with your natural teeth. <a href="dental-fillings.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['full mouth', 'rehabilitation', 'restore', 'full mouth rehabilitation'],
+            html: 'Our full mouth rehabilitation combines multiple treatments to completely restore your smile and function. <a href="full-mouth-rehabilitation.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['oral surgery', 'extraction', 'wisdom tooth', 'wisdom teeth', 'tooth removal'],
+            html: 'We perform comfortable oral surgery procedures including extractions and wisdom tooth removal. <a href="oral-surgery.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['preventive', 'prevention', 'cleaning', 'checkup', 'check-up', 'hygiene'],
+            html: 'Preventive dentistry keeps your smile healthy! We offer cleanings, exams, and more. <a href="preventive-dentistry.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['cosmetic', 'smile makeover', 'veneer', 'porcelain'],
+            html: 'Transform your smile with our cosmetic dentistry services &mdash; veneers, bonding, and more! <a href="cosmetic-dentistry.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['3d cbct', 'cbct', '3d scan', 'cone beam', 'xray', 'x-ray', 'scan'],
+            html: 'We use advanced 3D CBCT imaging for precise diagnosis and treatment planning. <a href="3dcbct.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['nitrous', 'nitrus', 'oxide', 'sedation', 'laughing gas', 'anxiety', 'nervous'],
+            html: 'Feeling anxious about dental visits? Our Nitrous Oxide Sedation makes treatment calm and comfortable. <a href="nitrus-oxide-sedation.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['waterlase', 'laser', 'laser dentistry'],
+            html: 'Our Waterlase laser technology allows for precise, minimally invasive dental treatments with less discomfort. <a href="waterlase.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['botox', 'dermal filler', 'filler', 'tmj', 'jaw pain', 'wrinkle'],
+            html: 'We offer Botox, Dermal Fillers, and TMJ Pain Management to help you look and feel your best. <a href="botox.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['laser hair', 'hair removal', 'unwanted hair'],
+            html: 'Our Laser Hair Removal treatments deliver smooth, long-lasting results. <a href="laser-hair-removal.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['skin treatment', 'v30', 'skin care', 'skincare', 'skin'],
+            html: 'Rejuvenate your skin with our V30 Skin Treatment &mdash; a cutting-edge solution for a radiant complexion. <a href="skin-treatments.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['dermafacial', 'facial', 'preime', 'prime dermafacial'],
+            html: 'The Preime Dermafacial is a premium facial treatment for deep skin rejuvenation and a glowing complexion. <a href="preime-dermafacial.php">Learn more &rarr;</a>'
+        },
+        {
+            keys: ['facial esthetic', 'esthetic', 'esthetics', 'beauty', 'aesthetic'],
+            html: '<strong>Our Facial Esthetics Services:</strong><br>&bull; <a href="botox.php">Botox, Dermal Fillers &amp; TMJ Pain Management</a><br>&bull; <a href="laser-hair-removal.php">Laser Hair Removal</a><br>&bull; <a href="skin-treatments.php">V30 Skin Treatment</a><br>&bull; <a href="preime-dermafacial.php">Preime Dermafacial</a>'
+        },
+        {
+            keys: ['hi', 'hello', 'hey', 'howdy', 'good morning', 'good afternoon', 'good evening'],
+            html: 'Hello! How can I help you today? Ask me about our services, hours, or how to book an appointment!'
+        },
+    ];
+
+    var DEFAULT = 'I\'m not sure about that, but our team can help! Call <strong><a href="tel:2156383350">(215) 638-3350</a></strong> or <a href="contact.php">send us a message &rarr;</a>';
+
+    function openChat() {
+        opened = true;
+        chatbot.classList.add('is-open');
+        if (!messages.hasChildNodes()) {
+            appendBot(GREETING);
+        }
+        setTimeout(function () { input.focus(); }, 350);
+    }
+
+    function closeChat() {
+        opened = false;
+        chatbot.classList.remove('is-open');
+    }
+
+    function appendMsg(html, type) {
+        var div = document.createElement('div');
+        div.className = 'chatbot__msg chatbot__msg--' + type;
+        div.innerHTML = html;
+        messages.appendChild(div);
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    function appendBot(html) { appendMsg(html, 'bot'); }
+    function appendUser(text) { appendMsg(escapeHtml(text), 'user'); }
+
+    function escapeHtml(str) {
+        return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function showTyping() {
+        var el = document.createElement('div');
+        el.className = 'chatbot__typing';
+        el.innerHTML = '<span></span><span></span><span></span>';
+        messages.appendChild(el);
+        messages.scrollTop = messages.scrollHeight;
+        return el;
+    }
+
+    function getResponse(text) {
+        var lower = text.toLowerCase();
+        for (var i = 0; i < RESPONSES.length; i++) {
+            var r = RESPONSES[i];
+            for (var j = 0; j < r.keys.length; j++) {
+                if (lower.indexOf(r.keys[j]) !== -1) return r.html;
+            }
+        }
+        return DEFAULT;
+    }
+
+    function send(text) {
+        text = text.trim();
+        if (!text) return;
+        appendUser(text);
+        input.value = '';
+        var typing = showTyping();
+        setTimeout(function () {
+            if (typing.parentNode) typing.parentNode.removeChild(typing);
+            appendBot(getResponse(text));
+        }, 750 + Math.random() * 350);
+    }
+
+    toggle.addEventListener('click', function () { opened ? closeChat() : openChat(); });
+    closeBtn.addEventListener('click', closeChat);
+    sendBtn.addEventListener('click', function () { send(input.value); });
+    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') send(input.value); });
+    qrWrap.addEventListener('click', function (e) {
+        var btn = e.target.closest('.chatbot__qr');
+        if (btn) send(btn.getAttribute('data-msg'));
+    });
+}());

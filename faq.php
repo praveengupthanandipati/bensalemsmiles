@@ -44,7 +44,7 @@ include 'components/header.php';
                 [
                     'category' => 'General',
                     'q' => 'Where is Bensalem Smiles 4 U located and what are your hours?',
-                    'a' => 'We are located at 1044 Byberry Rd, Bensalem, PA 19020. Our office hours are Monday &amp; Wednesday 9:00 AM–6:00 PM, Tuesday &amp; Thursday 8:00 AM–6:00 PM, and Friday by appointment 8:00 AM–1:00 PM. Call <a href="tel:2156383350" class="faq-link">(215) 638-3350</a> or <a href="tel:2156380336" class="faq-link">(215) 638-0336</a> to schedule.',
+                    'a' => 'We are located at 1044 Byberry Rd, Bensalem, PA 19020. Our office hours are Monday &amp; Wednesday 9:00 AM–6:00 PM, Tuesday &amp; Thursday 8:00 AM–6:00 PM, and Friday by appointment 9:00 AM–1:00 PM. Call <a href="tel:2156383350" class="faq-link">(215) 638-3350</a> or <a href="tel:2156380336" class="faq-link">(215) 638-0336</a> to schedule.',
                 ],
                 [
                     'category' => 'General',
@@ -81,7 +81,7 @@ include 'components/header.php';
                 [
                     'category' => 'Appointments',
                     'q' => 'What is your cancellation or rescheduling policy?',
-                    'a' => 'We kindly ask that you give us at least 24 hours\' notice if you need to cancel or reschedule your appointment. This allows us to offer the slot to another patient in need. To reschedule, simply call us at <a href="tel:2156383350" class="faq-link">(215) 638-3350</a> and we will find a new time that works for you.',
+                    'a' => 'We kindly ask that you give us at least 48 hours\' notice if you need to cancel or reschedule your appointment. This allows us to offer the slot to another patient in need. To reschedule, simply call us at <a href="tel:2156383350" class="faq-link">(215) 638-3350</a> and we will find a new time that works for you.',
                 ],
 
                 // ── Treatments ────────────────────────────────────────
@@ -103,7 +103,7 @@ include 'components/header.php';
                 [
                     'category' => 'Treatments',
                     'q' => 'Do you offer Invisalign or clear aligners?',
-                    'a' => 'Yes. We offer both Invisalign and Glidewell Clear Aligners to straighten teeth discreetly without metal braces. A free consultation is available to determine which option best fits your smile and lifestyle. Visit our <a href="glidewell-clear-aligners.php" class="faq-link">Glidewell Clear Aligners</a> page for details.',
+                    'a' => 'Yes. We offer both Invisalign and Glidewell Clear Aligners to straighten teeth discreetly without metal braces. Our Invisalign treatment includes <strong>ProMonitoring</strong> &mdash; a remote progress tracking system that allows our doctors to monitor your aligner treatment between visits, ensuring your smile is moving on track without requiring frequent in-office check-ins. A free consultation is available to determine which option best fits your smile and lifestyle. Visit our <a href="invisalign.php" class="faq-link">Invisalign</a> or <a href="glidewell-clear-aligners.php" class="faq-link">Glidewell Clear Aligners</a> page for details.',
                 ],
 
                 // ── Sedation & Comfort ────────────────────────────────
@@ -154,7 +154,7 @@ include 'components/header.php';
                 [
                     'category' => 'Costs & Offers',
                     'q' => 'What special offers do you currently have?',
-                    'a' => 'Current promotions include: Free consultation for Implants, Invisalign &amp; Dentures; $79 Emergency Exam with X-ray; $98 General Cleaning; $129 New Adult Patient (exam, X-ray &amp; cleaning); $99 New Kid Patient; 30% off for Seniors &amp; Veterans; and Zoom Whitening for $500 with lifetime refill kit. See all deals on our <a href="special-offers.php" class="faq-link">Special Offers</a> page.',
+                    'a' => 'Current promotions include: <strong>Free Consultation</strong> for Implants, Invisalign &amp; Dentures; <strong>$79</strong> Emergency Exam with X-ray; <strong>$98</strong> General Cleaning; <strong>$129</strong> New Adult Patient (exam, X-ray &amp; cleaning); <strong>$99</strong> New Kid Patient; <strong>30% off</strong> for Seniors &amp; Veterans; and <strong>Zoom Whitening for $500</strong> with a lifetime refill kit. See all deals on our <a href="special-offers.php" class="faq-link">Special Offers</a> page.',
                 ],
                 [
                     'category' => 'Costs & Offers',

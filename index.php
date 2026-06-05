@@ -41,18 +41,58 @@ include 'components/header.php';
                             </div>
                             <h5 class="feature-title"><?= htmlspecialchars($f['title']) ?></h5>
                             <p class="feature-desc"><?= htmlspecialchars($f['desc']) ?></p>
-                            <a href="javascript:void(0)" class="feature-readmore">
+                            <a href="<?= htmlspecialchars($f['href']) ?>" class="feature-readmore">
                                 Read more
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                             </a>
                         </div>
                     </div>
-                    <?php endforeach; ?>
+                    <?php endforeach; ?>                   
 
                 </div>
             </div>
         </section>
         <!--/ Features-->
+
+        <!-- Popular Services -->
+        <section class="features3 py-5 py-lg-6">
+            <div class="container-90">
+
+                <!-- Section Header -->
+                <div class="text-center mb-5 reveal reveal-fade-up">
+                    <span class="section-eyebrow">Our Dental Care</span>
+                    <h2 class="section-heading">Popular Dental Services</h2>
+                    <p class="section-subheading">Compassionate, patient-focused dental care delivered with the latest technology and the warmth you deserve.</p>
+                </div>
+
+                <div class="row g-4">
+
+                    <?php foreach ($dentalCareCards as $card): ?>
+                    <div class="col-12 col-sm-6 col-lg-3 reveal reveal-fade-up" data-reveal-delay="<?= $card['delay'] ?>">
+                        <div class="f3-card<?= $card['active'] ? ' f3-card--active' : '' ?>">
+                            <div class="f3-card__top">
+                                <div class="f3-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="niiiiiiii
+                                    one" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                        <?= $card['icon'] ?>
+                                    </svg>
+                                </div>
+                                <span class="f3-number"><?= $card['number'] ?></span>
+                            </div>
+                            <h4 class="f3-title"><?= htmlspecialchars($card['title']) ?></h4>
+                            <p class="f3-desc"><?= htmlspecialchars($card['desc']) ?></p>
+                            <div class="f3-divider"></div>
+                            <a href="<?= htmlspecialchars($card['href']) ?>" class="f3-link">
+                                Learn More
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+        <!--/ more features-->
 
         <!-- about -->
         <section class="about py-5 py-lg-6 bg-white">
@@ -66,7 +106,7 @@ include 'components/header.php';
                         <span class="section-eyebrow">About Us</span>
                         <h2 class="about-title">Welcome to Bensalem Smiles 4 U Dental</h2>
                         <p class="about-desc">Finding the right dental care plan is vital for your well-being and in this endeavour, Bensalem Smiles 4U has been able to bring about a state-of-the-art practice that offers comprehensive dental care to the patients. With our years of experience in providing quality dental care, we incorporate the latest technology and treatment techniques; we become the most preferred general dentist in Bensalem.</p>
-                        <a href="javascript:void(0)" class="btn btn-primary about-btn">
+                        <a href="about.php" class="btn btn-primary about-btn">
                             Read More
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
@@ -153,8 +193,6 @@ include 'components/header.php';
         </section>
         <!--/ about-->
 
-        <?php include 'components/gallery.php'; ?>
-
         <!-- advice section -->
         <section class="advice-section">
             <div class="advice-overlay"></div>
@@ -187,57 +225,7 @@ include 'components/header.php';
                 </div>
             </div>
         </section>
-        <!--/ advice section-->
-
-        <!-- more features -->
-        <section class="features3 py-5 py-lg-6">
-            <div class="container-90">
-
-                <!-- Section Header -->
-                <div class="text-center mb-5 reveal reveal-fade-up">
-                    <span class="section-eyebrow">Our Dental Care</span>
-                    <h2 class="section-heading">Dedicated to Your Smile &amp; Well-Being</h2>
-                    <p class="section-subheading">Compassionate, patient-focused dental care delivered with the latest technology and the warmth you deserve.</p>
-                </div>
-
-                <div class="row g-4">
-                    <?php foreach ($dentalCareCards as $card): ?>
-                    <div class="col-12 col-md-4 reveal reveal-fade-up" data-reveal-delay="<?= $card['delay'] ?>">
-                        <div class="f3-card<?= $card['active'] ? ' f3-card--active' : '' ?>">
-                            <div class="f3-card__top">
-                                <div class="f3-icon">
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                                        <?= $card['icon'] ?>
-                                    </svg>
-                                </div>
-                                <span class="f3-number"><?= $card['number'] ?></span>
-                            </div>
-                            <h4 class="f3-title"><?= htmlspecialchars($card['title']) ?></h4>
-                            <?php if ($card['desc']): ?>
-                            <p class="f3-desc"><?= htmlspecialchars($card['desc']) ?></p>
-                            <?php endif; ?>
-                            <?php if ($card['list']): ?>
-                            <ul class="f3-list">
-                                <?php foreach ($card['list'] as $item): ?>
-                                <li>
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    <?= htmlspecialchars($item) ?>
-                                </li>
-                                <?php endforeach; ?>
-                            </ul>
-                            <?php endif; ?>
-                            <div class="f3-divider"></div>
-                            <a href="javascript:void(0)" class="f3-link">
-                                Learn More
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </section>
-        <!--/ more features-->
+        <!--/ advice section-->     
 
         <!-- Insurance Partners -->
         <section class="insurance-section py-5 py-lg-6">
@@ -265,7 +253,9 @@ include 'components/header.php';
             </div>
 
         </section>
-        <!-- /Insurance Partners -->
+        <!-- /Insurance Partners -->  
+
+        <?php include 'components/gallery.php'; ?>
 
         <!-- testimonials -->
         <section class="testimonials-section py-5 py-lg-6">
