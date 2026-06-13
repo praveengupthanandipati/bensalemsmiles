@@ -55,6 +55,8 @@ include 'components/header.php';
 
                     <!-- Contact Form -->
                     <form id="contactForm" class="contact-form needs-validation" novalidate>
+                        <!-- Honeypot — hidden from real users, catches bots -->
+                        <input type="text" name="website_url" style="display:none;" tabindex="-1" autocomplete="off" aria-hidden="true">
 
                         <div class="row g-4">
 
@@ -191,7 +193,7 @@ include 'components/header.php';
 
         var data = new FormData(form);
 
-        fetch('send-contact.php', { method: 'POST', body: data })
+        fetch('send-contact', { method: 'POST', body: data })
             .then(function (res) { return res.json(); })
             .then(function (json) {
                 spinner.classList.add('d-none');

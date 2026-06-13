@@ -33,7 +33,7 @@ include 'components/header.php';
                     <h2 class="section-heading mt-1 mb-3">Quality Dental Care<br class="d-none d-md-block"> Without the High Price Tag</h2>
                     <p class="about-desc">At Bensalem Smiles 4 U, we firmly believe that every patient deserves access to exceptional dental care — regardless of their financial situation. Our transparent, straightforward pricing means no hidden fees, no surprises, and no stress.</p>
                     <p class="about-desc">Whether you're a new patient, a senior, a veteran, or a family looking for affordable preventive care, we have flexible options designed with you in mind. Our in-house preventive plans are a perfect alternative to traditional dental insurance.</p>
-                    <a href="appointment.php" class="btn btn-primary about-btn mt-2">
+                    <a href="https://app.nexhealth.com/appt/bensalem-smiles-4-u?lid=242566" target="_blank" class="btn btn-primary about-btn mt-2">
                         Book an Appointment
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </a>
@@ -328,7 +328,7 @@ include 'components/header.php';
                     <div class="cbct-card__pricing">
                         <div class="cbct-card__amount">$350</div>
                         <div class="cbct-card__note">Per scan · Not combinable</div>
-                        <a href="technology.php" class="btn btn-light mt-3" style="border-radius: 10px; font-weight: 700; color: var(--bs-secondary); font-size: 0.875rem;">
+                        <a href="new-technology.php" class="btn btn-light mt-3" style="border-radius: 10px; font-weight: 700; color: var(--bs-secondary); font-size: 0.875rem;">
                             Learn About Our Technology
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
@@ -346,7 +346,7 @@ include 'components/header.php';
             <h3 class="fw-800 mb-2" style="color: var(--bs-secondary); font-weight: 800;">Have Questions About Pricing?</h3>
             <p class="text-muted mb-4" style="font-size: 0.975rem;">Our team is happy to walk you through every option and find a plan that works for your budget.</p>
             <div class="d-flex flex-wrap gap-3 justify-content-center">
-                <a href="appointment.php" class="btn btn-primary btn-lg">
+                <a href="https://app.nexhealth.com/appt/bensalem-smiles-4-u?lid=242566" target="_blank" class="btn btn-primary btn-lg">
                     Get an Appointment
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>

@@ -141,7 +141,7 @@ include 'components/header.php';
                     </div>
 
                     <div class="about-action-btns d-flex flex-wrap gap-3">
-                        <a href="appointment.php" class="btn btn-primary fw-semibold">
+                        <a href="https://app.nexhealth.com/appt/bensalem-smiles-4-u?lid=242566" target="_blank" class="btn btn-primary fw-semibold">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2">
                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                                 <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -157,14 +157,7 @@ include 'components/header.php';
                             </svg>
                             Get Fair Prices
                         </a>
-                        <a href="downloads.php" class="btn btn-outline-primary fw-semibold">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                            </svg>
-                            Download Forms
-                        </a>
+                     
                     </div>
                 </div>
 
@@ -239,7 +232,7 @@ include 'components/header.php';
             <!-- CTA -->
             <div class="text-center mt-5 reveal reveal-fade-up" data-reveal-delay="100">
                 <p class="text-muted mb-3" style="font-size: 0.95rem;">Ready to experience the Bensalem difference?</p>
-                <a href="appointment.php" class="btn btn-primary btn-lg">
+                <a href="https://app.nexhealth.com/appt/bensalem-smiles-4-u?lid=242566" target="_blank" class="btn btn-primary btn-lg">
                     Book Your Appointment Today
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2">
                         <line x1="5" y1="12" x2="19" y2="12"></line>

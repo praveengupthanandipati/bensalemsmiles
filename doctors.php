@@ -189,7 +189,7 @@ include 'components/header.php';
         <div class="container-90">
             <h3 class="fw-800 mb-2" style="color: var(--bs-secondary); font-weight: 800;">Ready to Meet Our Team?</h3>
             <p class="text-muted mb-4" style="font-size: 0.975rem;">Schedule your appointment today and experience exceptional dental care firsthand.</p>
-            <a href="appointment.php" class="btn btn-primary btn-lg">
+            <a href="https://app.nexhealth.com/appt/bensalem-smiles-4-u?lid=242566" target="_blank" class="btn btn-primary btn-lg">
                 Get an Appointment
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>

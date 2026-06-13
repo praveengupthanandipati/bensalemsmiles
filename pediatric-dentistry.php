@@ -279,11 +279,7 @@ include 'components/header.php';
         <div class="container-90">
             <h3 style="color:var(--bs-secondary); font-weight:800;" class="mb-2">Give Your Child the Best Start</h3>
             <p class="text-muted mb-4" style="font-size:0.975rem;">Early dental care sets the foundation for a lifetime of healthy smiles. Book your child's first visit today.</p>
-            <div class="d-flex flex-wrap gap-3 justify-content-center">
-                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                    Book an Appointment
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+            <div class="d-flex flex-wrap gap-3 justify-content-center">               
                 <a href="tel:2156383350" class="btn btn-outline-secondary btn-lg">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.84-.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     (215) 638-3350
